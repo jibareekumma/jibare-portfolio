@@ -1,0 +1,25 @@
+* {
+  border: 0;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@font-face {
+  font-family: crimsonn;
+  src: url(fonts/CrimsonText-Regular.ttf);
+}
+
+@font-face {
+  font-family: yuyu;
+  src: url(fonts/Yuyu-Regular.ttf);
+}
+
+body {
+  background: radial-gradient(circle at 65% 40%, #222325 0%, #0a0b0d 70%);
+  color: white;
+  font-family: crimsonn;
+}
