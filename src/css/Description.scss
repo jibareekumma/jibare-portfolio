@@ -2,6 +2,9 @@
 
 $secondary-text: rgb(176, 179, 185);
 $filter-white: brightness(0) invert(1);
+$filter-green: invert(74%) sepia(23%) 
+saturate(587%) hue-rotate(76deg) 
+brightness(101%) contrast(92%);;
 $bg-color2: rgb(23, 24, 26);
 $bg-color3: rgb(37, 40, 46);
 
@@ -122,12 +125,14 @@ $bg-color3: rgb(37, 40, 46);
 
 .desc-image {
   position: relative;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   
   img {
     display: block;
-    width: 100%;
+    max-width: 35rem;
     height: auto;
     border-radius: 8px; 
   }
@@ -136,22 +141,23 @@ $bg-color3: rgb(37, 40, 46);
     position: absolute;
     top: 25rem;
     right: 1rem;
-    width: 12rem;
+    width: 15rem;
     height: auto;
     display: flex;
     align-items: center;
     gap: 10px;
     background: $bg-color3;
-    backdrop-filter: blur(8px);
+    // backdrop-filter: blur(8px);
     padding: 1rem 0.5rem;
     border-radius: 5px;
     
     
     img {
-      width: 12px;
+      max-width: 12px;
       height: 12px;
       border-radius: 50%;
-      filter: $filter-white;
+      border: 2px solid white;
+      filter: $filter-green;
       animation: pulse-dot 2s infinite;
     }
     
@@ -183,42 +189,58 @@ $bg-color3: rgb(37, 40, 46);
 
 
 
-@media (min-width: 968px) {
 
-    .desc-info{
+
+@media (min-width: 768px){
+    .desc-container{
+        margin-top: 3rem;
+        display: flex;
         flex-direction: row;
-        width: 55%;
-        justify-content: center;
-        border: 2px solid white;
-    }
+        justify-content: space-between;
+        align-items: center;
+        align-items: stretch;
+        width: 100%;
 
-    .desc-image{
-        width: 40%;
-        position: relative;
+        .desc-info{
+            gap: 4rem;
+            flex: 0 1 48%;
+            max-width: 48%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 5rem;
+            
 
-        &::before{
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 45%;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0) 100%);
-            border-radius: 8px 8px 0 0;
-            z-index: 1;
-            pointer-events: none;
+            .desc-title{
+                height: 3rem;
+                padding-right: 0.5rem;
+                padding-left: 0.5rem;
+                font-weight: 500;
+            }
+
+            .desc-texts{
+                p{
+                    font-size: 1.5rem;
+                }
+            }
         }
 
-        img{
-            position: relative;
-            z-index: 0;
-        }
+        .desc-image{
+            flex: 0 1 45%;
+            max-width: 45%;
+            width: auto;
 
-        .desc-available{
-            top: auto;
-            bottom: 1rem;
-            right: 1rem;
-            z-index: 2;
+            > img{
+                width: 100%;
+                height: 100%;
+                max-width: 100%;
+                object-fit: cover;
+            }
+
+            .desc-available{
+                top: auto;
+                bottom: 1.5rem;
+                right: 1rem;
+            }
         }
     }
 }

@@ -13,6 +13,8 @@ const Description = function(){
 
     return<>
 
+    <div className = 'desc-container'>
+
 
         <div className = "desc-info">
 
@@ -61,6 +63,7 @@ const Description = function(){
                     />
                     <p>Available for Freelance</p>
                 </div>
+        </div>
         </div>
     
     </>
