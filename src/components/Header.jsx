@@ -1,8 +1,12 @@
 
 
+
 import logo from "/icons/favicon2.png"
 import hamburgerIcon from "/icons/hamburger-icon.png"
 import closeIcon from "/icons/cancel_icon2.png"
+import upperRightIcon from "/icons/upper-left-arr.png"
+
+
 import { useState } from "react"
 
 
@@ -61,7 +65,16 @@ const Header = function(){
                     <li><a href="#services" >Services</a></li>
                     <li><a href="#projects" >Projects</a></li>
                 </ul>
+                <div title="Contact dev Jibare"
+                    className="talk-btn"
+                >
+                <p>Lets Talk</p>
+                <img src = {upperRightIcon} alt="Contact Jibare"
+
+                />
+                </div>
             </nav>
+           
         </header>
 
         {menuOpen && <div className="overlay" onClick={closeMenu}></div>}

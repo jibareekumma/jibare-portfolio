@@ -2,11 +2,11 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 2px solid white;
   padding-left: 0;
   position: relative;
   height: auto;
   z-index: 100;
+  margin-bottom: 2rem;
 }
 header .logos-container {
   display: flex;
@@ -18,7 +18,6 @@ header .logos-container {
 header .logos-container img {
   width: 6rem;
   height: 6rem;
-  border: 2px solid white;
   padding-left: 0;
   margin-left: -1rem;
 }
@@ -121,5 +120,67 @@ header .nav-menu-dsk {
   }
   header .nav-menu-dsk {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    height: 100%;
+  }
+  header .nav-menu-dsk ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 70%;
+  }
+  header .nav-menu-dsk ul li {
+    list-style-type: none;
+    height: 100%;
+    letter-spacing: 1.5px;
+    color: rgb(176, 179, 185);
+    font-size: 1.3rem;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+  }
+  header .nav-menu-dsk ul li:hover {
+    background-color: rgb(37, 40, 46);
+    cursor: pointer;
+  }
+  header .nav-menu-dsk ul li a {
+    text-decoration: none;
+    color: rgb(176, 179, 185);
+  }
+  header .nav-menu-dsk ul li a:hover {
+    color: white;
+  }
+  header .nav-menu-dsk .talk-btn {
+    width: 10rem;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    gap: 0.1rem;
+    border: none;
+    padding: 0;
+    background-color: rgb(37, 40, 46);
+    align-items: center;
+    border-radius: 5px;
+    padding-left: 1rem;
+  }
+  header .nav-menu-dsk .talk-btn:hover {
+    cursor: pointer;
+    border-bottom: 0.2px groove rgb(176, 179, 185);
+  }
+  header .nav-menu-dsk .talk-btn p {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    font-weight: 550;
+  }
+  header .nav-menu-dsk .talk-btn img {
+    width: 1.3rem;
+    height: 1.3rem;
+    filter: brightness(0) invert(1);
   }
 }/*# sourceMappingURL=Header.css.map */
