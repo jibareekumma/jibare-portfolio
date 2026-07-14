@@ -6,6 +6,7 @@ import hamburgerIcon from "/icons/hamburger-icon.png"
 import closeIcon from "/icons/cancel_icon2.png"
 import upperRightIcon from "/icons/upper-left-arr.png"
 
+import ThemeToggle from "./ThemeToggle"
 
 import { useState } from "react"
 
@@ -39,6 +40,8 @@ const Header = function(){
                 </div>
             </div>
 
+
+            <ThemeToggle/>
 
             <div className="hamburger-menu" onClick={toggleMenu}>
                 <img src = {menuOpen ? closeIcon : hamburgerIcon} 
@@ -74,6 +77,8 @@ const Header = function(){
                 />
                 </div>
             </nav>
+
+            
            
         </header>
 

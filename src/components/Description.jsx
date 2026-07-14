@@ -5,6 +5,13 @@ import downloadIcon from "/icons/download-icon.png"
 import myImage from "/photos/jibare-image.png"
 
 
+import reactLogo from "/icons/react_logo.png"
+import typescriptLogo from "/icons/typscript_logo.png"
+import taiwindLogo from "/icons/taiwind-logo.png"
+import djangoLogo from "/icons/django_logo.png"
+import postresqlLogo from "/icons/postresql-logo.png"
+
+
 import "../css/Description.css"
 
 
@@ -65,6 +72,39 @@ const Description = function(){
                 </div>
         </div>
         </div>
+
+
+        <ul className = "desc-skills">
+            <li>
+                <img src = {reactLogo} 
+                alt="React Logo" loading="lazy" />
+                <p>React</p>
+            </li>
+
+            <li>
+                <img src = {typescriptLogo} 
+                alt="Typescript Logo" loading="lazy" />
+                <p>Typescript</p>
+            </li>
+
+            <li>
+                <img src = {taiwindLogo} 
+                alt="Taiwind Logo" loading="lazy" />
+                <p>Taiwind</p>
+            </li>
+
+            <li>
+                <img src = {djangoLogo} 
+                alt="DJango Logo" loading="lazy" />
+                <p>Django</p>
+            </li>
+
+            <li>
+                <img src = {postresqlLogo} 
+                alt="Postresql Logo" loading="lazy" />
+                <p>PostreSQL</p>
+            </li>
+        </ul>
     
     </>
 }

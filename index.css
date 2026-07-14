@@ -8,6 +8,28 @@ html {
   font-size: 62.5%;
 }
 
+:root {
+  --bg-primary: #0a0b0d;
+  --bg-primary-radial: #222325;
+  --bg-secondary: rgb(23, 24, 26);
+  --bg-tertiary: rgb(37, 40, 46);
+  --text-primary: #ffffff;
+  --text-secondary: rgb(176, 179, 185);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --icon-filter: brightness(0) invert(1);
+}
+
+[data-theme="light"] {
+  --bg-primary: #f4f5f7;
+  --bg-primary-radial: #ffffff;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #eceef2;
+  --text-primary: #16171a;
+  --text-secondary: #55585f;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --icon-filter: brightness(0) saturate(100%);
+}
+
 @font-face {
   font-family: crimsonn;
   src: url(fonts/CrimsonText-Regular.ttf);
@@ -19,7 +41,14 @@ html {
 }
 
 body {
-  background: radial-gradient(circle at 65% 40%, #222325 0%, #0a0b0d 70%);
-  color: white;
+  background: radial-gradient(
+    circle at 65% 40%,
+    var(--bg-primary-radial) 0%,
+    var(--bg-primary) 70%
+  );
+  color: var(--text-primary);
   font-family: crimsonn;
+  transition:
+    background 0.4s ease,
+    color 0.4s ease;
 }

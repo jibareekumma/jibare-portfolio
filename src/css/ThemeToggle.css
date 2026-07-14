@@ -1,0 +1,55 @@
+.theme-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  z-index: 110;
+}
+.theme-toggle .toggle-track {
+  position: relative;
+  width: 5.5rem;
+  height: 2.8rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  padding: 0.3rem;
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+.theme-toggle .toggle-track .toggle-icons {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.6rem;
+  pointer-events: none;
+}
+.theme-toggle .toggle-track .toggle-icons .icon {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+.theme-toggle .toggle-track .toggle-icons .sun {
+  color: #f5a623;
+}
+.theme-toggle .toggle-track .toggle-icons .moon {
+  color: #b0b3b9;
+}
+.theme-toggle .toggle-track .toggle-thumb {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: var(--text-primary);
+  transform: translateX(0);
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1), background-color 0.4s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.theme-toggle .toggle-track.light .toggle-thumb {
+  transform: translateX(2.5rem);
+}
+.theme-toggle:hover .toggle-track {
+  border-color: var(--text-secondary);
+}/*# sourceMappingURL=ThemeToggle.css.map */

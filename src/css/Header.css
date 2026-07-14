@@ -7,6 +7,7 @@ header {
   height: auto;
   z-index: 100;
   margin-bottom: 2rem;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 header .logos-container {
   display: flex;
