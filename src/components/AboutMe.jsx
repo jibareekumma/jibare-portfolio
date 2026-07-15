@@ -10,8 +10,11 @@ import dotIcon from "/icons/dotIcon.png"
 
 
 import "../css/AboutMe.css"
+import { useNavigate } from "react-router-dom"
 
 const AboutMe = function(){
+
+    const navigate = useNavigate();
     return<>
     
 
@@ -34,7 +37,9 @@ const AboutMe = function(){
                     digital ecperiences and optimizing them for search engines.
 
                 </p>
-                <div className="redirect-btn">
+                <div className="redirect-btn"
+                    onClick = {() => navigate('/more-about-me')}
+                >
                     <p>More About Me</p>
                     <img src = {upperRightIcon} 
                     alt="Upper Right Icon" loading="lazy" />
