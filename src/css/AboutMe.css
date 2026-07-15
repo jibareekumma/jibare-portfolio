@@ -3,7 +3,6 @@
   src: url(fonts/CrimsonText-Regular.ttf);
 }
 .about-container {
-  border: 2px solid white;
   display: flex;
   flex-direction: column;
   gap: 2rem;
