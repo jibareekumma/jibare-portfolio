@@ -3,6 +3,7 @@
 import Header from "./Header";
 import Description from "./Description";
 import AboutMe from "./AboutMe";
+import Services from "./Services";
 
 
 const Intro = function(){
@@ -11,6 +12,7 @@ const Intro = function(){
        <Header/>
        <Description/>
        <AboutMe/>
+       <Services/>
     </>
 }
 

@@ -12,6 +12,7 @@ import { useState } from "react"
 
 
 import "../css/Header.css"
+import { useNavigate } from "react-router-dom"
 
 
 
@@ -27,6 +28,7 @@ const Header = function(){
         setMenuOpen(false)
     }
 
+    const navigate = useNavigate();
     return<>
 
         <header>
@@ -53,7 +55,8 @@ const Header = function(){
                 <ul>
                     <li><a href="#home" onClick={closeMenu}>Home</a></li>
                     <li><a href="#about" onClick={closeMenu}>About</a></li>
-                    <li><a href="#services" onClick={closeMenu}>Services</a></li>
+                    <li><a href="#services" 
+                    onClick={() => navigate('/services')}>Services</a></li>
                     <li><a href="#projects" onClick={closeMenu}>Projects</a></li>
                 </ul>
             </nav>
