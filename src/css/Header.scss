@@ -92,6 +92,7 @@ header {
     background-color: $bg-color2;
     transition: right 0.3s ease-in-out;
     z-index: 105;
+    // position: relative;
 
     &.active {
       right: 0;

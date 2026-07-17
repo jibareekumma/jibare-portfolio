@@ -8,7 +8,11 @@ import codeIcon from "/icons/code_icon.png"
 import designIcon from "/icons/design_icon.png"
 import webIcon from "/icons/web_icon.png"
 import rightIcon from "/icons/right-icon.png"
+
 import websitePage from "/icons/website_markup.png"
+import seoPage from "/icons/seo-page-markup.png"
+import apiPage from "/icons/api-seo-markup.png"
+import designPage from "/icons/web-design-icon.png"
 
 import "../css/Services.css"
 import { useState } from "react"
@@ -16,6 +20,7 @@ import { useState } from "react"
 const servicesData = {
     "web-dev": {
         icon: webIcon,
+        image: websitePage,
         title: "Web Development",
         description: "I build fast, responsive and user-friendly websites and web applications that deliver real value.",
         offers: [
@@ -29,6 +34,7 @@ const servicesData = {
     },
     "seo": {
         icon: seoIcon,
+        image: seoPage,
         title: "SEO Analysis",
         description: "I help your business rank higher across search engines and LLMs to help you beat your competitors.",
         offers: [
@@ -42,6 +48,7 @@ const servicesData = {
     },
     "api-dev": {
         icon: codeIcon,
+        image: apiPage,
         title: "API Development",
         description: "I design and build RESTful APIs and integrations for seamless functionality across your systems.",
         offers: [
@@ -55,6 +62,7 @@ const servicesData = {
     },
     "design": {
         icon: designIcon,
+        image: designPage,
         title: "WEB & APP Designs",
         description: "I create modern, intuitive designs that keep users engaged and make products easy to use.",
         offers: [
@@ -210,7 +218,8 @@ const Services = function(){
                                         <span></span>
                                         <span></span>
                                     </div>
-                                    <img src = {websitePage} alt="Website preview" loading="lazy" />
+                                    <img src = {activeData.image} 
+                                    alt="Website preview" loading="lazy" />
                                 </div>
                             </div>
                         </div>

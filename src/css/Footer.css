@@ -1,0 +1,194 @@
+@font-face {
+  font-family: crimsonn;
+  src: url(fonts/CrimsonText-Regular.ttf);
+}
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 4rem;
+  padding: 0 1rem 2rem 1rem;
+  position: relative;
+}
+footer .scroll-top-btn {
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+  background-color: rgb(37, 40, 46);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+}
+footer .scroll-top-btn:hover {
+  cursor: pointer;
+  background-color: rgb(65, 66, 66);
+}
+footer .footer-card {
+  width: 100%;
+  max-width: 26rem;
+  background-color: rgba(37, 40, 46, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.2rem;
+}
+footer .footer-card .name-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+footer .footer-card .name-container h2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+footer .footer-card .name-container h2 img {
+  width: 1.6rem;
+  height: 1.6rem;
+  filter: brightness(0) saturate(100%) invert(78%) sepia(3%) saturate(15%) hue-rotate(314deg) brightness(92%) contrast(89%);
+}
+footer .footer-card .name-container p {
+  font-size: 1rem;
+  color: rgb(176, 179, 185);
+  letter-spacing: 0.5px;
+}
+footer .footer-card .divider-dot {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+}
+footer .footer-card .divider-dot::before, footer .footer-card .divider-dot::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+footer .footer-card .divider-dot .dot {
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background-color: rgb(75, 80, 88);
+  flex-shrink: 0;
+}
+footer .footer-card .icons-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+footer .footer-card .icons-container .icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: rgb(37, 40, 46);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .footer-card .icons-container .icon img {
+  width: 1.3rem;
+  height: 1.3rem;
+  filter: brightness(0) invert(1);
+}
+footer .footer-card .icons-container .icon:hover {
+  cursor: pointer;
+  background-color: rgb(65, 66, 66);
+}
+footer .footer-card .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+footer .footer-card .contact-info .contact-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  color: rgb(176, 179, 185);
+}
+footer .footer-card .contact-info .contact-row svg {
+  flex-shrink: 0;
+}
+footer .footer-card .contact-info .contact-row span {
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+}
+footer .footer-card .copyright {
+  font-size: 0.9rem;
+  color: rgb(176, 179, 185);
+  letter-spacing: 0.3px;
+}
+footer .footer-card .divider-line {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  footer {
+    flex-direction: row;
+    max-width: 68rem;
+    margin: 4rem auto 0 auto;
+    padding: 0 1rem 2rem 1rem;
+  }
+  footer .scroll-top-btn {
+    order: 2;
+  }
+  footer .footer-card {
+    max-width: none;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    padding: 1.8rem 2.5rem;
+    gap: 2rem;
+    order: 1;
+  }
+  footer .footer-card .name-container {
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  footer .footer-card .name-container h2 {
+    font-size: 1.8rem;
+  }
+  footer .footer-card .divider-line {
+    display: block;
+    width: 1px;
+    height: 3.5rem;
+    background-color: rgba(255, 255, 255, 0.08);
+    flex-shrink: 0;
+  }
+  footer .footer-card .icons-container {
+    gap: 0.8rem;
+  }
+  footer .footer-card .icons-container .icon {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+  footer .footer-card .mobile-only {
+    display: none;
+  }
+  footer .footer-card .copyright {
+    position: absolute;
+    left: 2.5rem;
+    bottom: 1.3rem;
+    font-size: 0.85rem;
+  }
+}/*# sourceMappingURL=Footer.css.map */

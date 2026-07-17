@@ -43,7 +43,7 @@ const Header = function(){
             </div>
 
 
-            <ThemeToggle/>
+            
 
             <div className="hamburger-menu" onClick={toggleMenu}>
                 <img src = {menuOpen ? closeIcon : hamburgerIcon} 
@@ -59,12 +59,14 @@ const Header = function(){
                     onClick={() => navigate('/services')}>Services</a></li>
                     <li><a href="#projects" onClick={closeMenu}>Projects</a></li>
                 </ul>
+                 <ThemeToggle/>
             </nav>
 
 
 
 
             <nav className = "nav-menu-dsk">
+                 <ThemeToggle/>
                 <ul>
                     <li><a href="#home" >Home</a></li>
                     <li><a href="#about" >About</a></li>
