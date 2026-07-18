@@ -7,6 +7,8 @@
   flex-direction: column;
   gap: 2rem;
   margin-top: 4rem;
+  animation: fadeSlideUp 0.6s ease-out both;
+  animation-delay: 0.8s;
 }
 .about-container .text-container-about {
   display: flex;
@@ -19,10 +21,10 @@
   gap: 0.7rem;
   justify-content: center;
   align-items: center;
-  background-color: rgb(37, 40, 46);
+  background-color: var(--bg-tertiary);
   max-width: 10rem;
   height: 3rem;
-  color: rgb(176, 179, 185);
+  color: var(--text-secondary);
   font-size: 1.2rem;
   font-weight: 550;
   font-family: crimsonn;
@@ -31,7 +33,7 @@
 .about-container .text-container-about button img {
   width: 1rem;
   height: 1rem;
-  filter: brightness(0) saturate(100%) invert(78%) sepia(3%) saturate(15%) hue-rotate(314deg) brightness(92%) contrast(89%);
+  filter: var(--icon-filter);
   animation: pulse-dot 2s infinite;
 }
 .about-container .text-container-about h5 {
@@ -44,7 +46,7 @@
 .about-container .text-container-about .about-me-p {
   width: 80%;
   font-size: 1.3rem;
-  color: rgb(176, 179, 185);
+  color: var(--text-secondary);
   letter-spacing: 1px;
   line-height: 1.8rem;
 }
@@ -55,7 +57,7 @@
   gap: 0.8rem;
   justify-content: center;
   align-items: center;
-  border: 0.5px solid rgb(75, 80, 88);
+  border: 0.5px solid var(--accent-border);
   height: 3.5rem;
   border-radius: 4px;
 }
@@ -70,7 +72,7 @@
 .about-container .text-container-about .redirect-btn img {
   width: 1.5rem;
   height: 1.5rem;
-  filter: brightness(0) invert(1);
+  filter: var(--icon-filter);
 }
 .about-container .skills-container {
   display: flex;
@@ -82,7 +84,7 @@
   flex-direction: row;
   gap: 1.5rem;
   height: 6rem;
-  background-color: rgb(37, 40, 46);
+  background-color: var(--bg-tertiary);
   border: none;
   border-radius: 10px;
   align-items: center;
@@ -94,14 +96,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(65, 66, 66);
+  background-color: var(--accent-bg);
   border: none;
   border-radius: 5px;
 }
 .about-container .skills-container .container-item .icon-container img {
   width: 2rem;
   height: 2rem;
-  filter: brightness(0) invert(1);
+  filter: var(--icon-filter);
 }
 .about-container .skills-container .container-item .designer-icon {
   width: 4.7rem;
@@ -119,7 +121,7 @@
 }
 .about-container .skills-container .text-container p {
   font-size: 1.2rem;
-  color: rgb(176, 179, 185);
+  color: var(--text-secondary);
   letter-spacing: 1px;
 }
 

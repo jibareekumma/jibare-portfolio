@@ -4,6 +4,11 @@
   gap: 1.5rem;
 }
 
+.desc-container {
+  animation: fadeSlideUp 0.6s ease-out both;
+  animation-delay: 0.4s;
+}
+
 .desc-title {
   display: flex;
   flex-direction: row;
@@ -11,7 +16,7 @@
   height: 3rem;
   width: -moz-fit-content;
   width: fit-content;
-  background-color: rgb(37, 40, 46);
+  background-color: var(--bg-tertiary);
   align-items: center;
   border-radius: 5px;
   padding: 0 1rem;
@@ -19,7 +24,7 @@
 .desc-title img {
   width: 1.2rem;
   height: 1.2rem;
-  filter: brightness(0) invert(1);
+  filter: var(--icon-filter);
   animation: pulse-dot 2s infinite;
 }
 .desc-title h6 {
@@ -48,7 +53,7 @@
   letter-spacing: 1px;
   word-spacing: 1.5px;
   font-size: 1.3rem;
-  color: rgb(176, 179, 185);
+  color: var(--text-secondary);
 }
 
 .desc-btns {
@@ -73,10 +78,10 @@
   border-radius: 5px;
 }
 .desc-btns button:hover {
-  background-color: rgb(37, 40, 46);
-  color: white;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
   cursor: pointer;
-  border: 0.2px solid rgb(176, 179, 185);
+  border: 0.2px solid var(--text-secondary);
 }
 .desc-btns button img {
   width: 1.3rem;
@@ -84,11 +89,11 @@
 }
 .desc-btns .download-btn {
   background-color: transparent;
-  border: 0.2px solid rgb(176, 179, 185);
-  color: white;
+  border: 0.2px solid var(--text-secondary);
+  color: var(--text-primary);
 }
 .desc-btns .download-btn img {
-  filter: brightness(0) invert(1);
+  filter: var(--icon-filter);
 }
 
 .desc-image {
@@ -113,7 +118,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  background: rgb(37, 40, 46);
+  background: var(--bg-tertiary);
   padding: 1rem 0.5rem;
   border-radius: 5px;
 }
@@ -121,13 +126,13 @@
   max-width: 12px;
   height: 12px;
   border-radius: 50%;
-  border: 2px solid white;
+  border: 2px solid var(--text-primary);
   filter: invert(74%) sepia(23%) saturate(587%) hue-rotate(76deg) brightness(101%) contrast(92%);
   animation: pulse-dot 2s infinite;
 }
 .desc-image .desc-available p {
   margin: 0;
-  color: #ffffff;
+  color: var(--text-primary);
   font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 1px;
@@ -153,7 +158,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     align-items: stretch;
     width: 100%;
   }
@@ -198,13 +202,15 @@
   flex-wrap: wrap;
   align-items: center;
   height: 5rem;
-  background-color: rgb(37, 40, 46);
+  background-color: var(--bg-tertiary);
   justify-content: space-between;
   list-style: none;
   padding-right: 1rem;
   padding-left: 1rem;
   border-radius: 5px;
   margin-top: 0.5rem;
+  animation: fadeSlideUp 0.6s ease-out both;
+  animation-delay: 0.5s;
 }
 .desc-skills li {
   display: flex;
@@ -220,14 +226,14 @@
   -o-object-fit: contain;
      object-fit: contain;
   flex-shrink: 0;
-  filter: brightness(0) saturate(100%) invert(78%) sepia(3%) saturate(15%) hue-rotate(314deg) brightness(92%) contrast(89%);
+  filter: var(--icon-filter);
 }
 .desc-skills li p {
   display: none;
   margin: 0;
   font-size: 1.3rem;
   font-weight: 500;
-  color: white;
+  color: var(--text-primary);
   white-space: nowrap;
   letter-spacing: 0.5px;
 }

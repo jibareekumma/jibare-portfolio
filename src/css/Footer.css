@@ -11,29 +11,31 @@ footer {
   margin-top: 4rem;
   padding: 0 1rem 2rem 1rem;
   position: relative;
+  animation: fadeSlideUp 0.6s ease-out both;
+  animation-delay: 2s;
 }
 footer .scroll-top-btn {
   width: 3.4rem;
   height: 3.4rem;
   border-radius: 50%;
-  background-color: rgb(37, 40, 46);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  box-shadow: 0 0 12px var(--glow-shadow);
 }
 footer .scroll-top-btn:hover {
   cursor: pointer;
-  background-color: rgb(65, 66, 66);
+  background-color: var(--accent-bg);
 }
 footer .footer-card {
   width: 100%;
   max-width: 26rem;
-  background-color: rgba(37, 40, 46, 0.6);
+  background-color: var(--card-bg-translucent);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 2rem 1.5rem;
   display: flex;
@@ -60,11 +62,11 @@ footer .footer-card .name-container h2 {
 footer .footer-card .name-container h2 img {
   width: 1.6rem;
   height: 1.6rem;
-  filter: brightness(0) saturate(100%) invert(78%) sepia(3%) saturate(15%) hue-rotate(314deg) brightness(92%) contrast(89%);
+  filter: var(--icon-filter);
 }
 footer .footer-card .name-container p {
   font-size: 1rem;
-  color: rgb(176, 179, 185);
+  color: var(--text-secondary);
   letter-spacing: 0.5px;
 }
 footer .footer-card .divider-dot {
@@ -78,13 +80,13 @@ footer .footer-card .divider-dot::before, footer .footer-card .divider-dot::afte
   content: "";
   flex: 1;
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: var(--border-color);
 }
 footer .footer-card .divider-dot .dot {
   width: 0.35rem;
   height: 0.35rem;
   border-radius: 50%;
-  background-color: rgb(75, 80, 88);
+  background-color: var(--accent-border);
   flex-shrink: 0;
 }
 footer .footer-card .icons-container {
@@ -96,8 +98,8 @@ footer .footer-card .icons-container .icon {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  background-color: rgb(37, 40, 46);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,11 +107,11 @@ footer .footer-card .icons-container .icon {
 footer .footer-card .icons-container .icon img {
   width: 1.5rem;
   height: 1.5rem;
-  filter: brightness(0) invert(1);
+  filter: var(--icon-filter);
 }
 footer .footer-card .icons-container .icon:hover {
   cursor: pointer;
-  background-color: rgb(65, 66, 66);
+  background-color: var(--accent-bg);
 }
 footer .footer-card .contact-info {
   display: flex;
@@ -122,7 +124,7 @@ footer .footer-card .contact-info .contact-row {
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  color: rgb(176, 179, 185);
+  color: var(--text-secondary);
 }
 footer .footer-card .contact-info .contact-row svg {
   flex-shrink: 0;
@@ -135,11 +137,11 @@ footer .footer-card .contact-info .contact-row span a {
   font-size: 1.3rem;
   letter-spacing: 1px;
   text-decoration: none;
-  color: white;
+  color: var(--text-primary);
 }
 footer .footer-card .copyright {
   font-size: 1.15rem;
-  color: rgb(176, 179, 185);
+  color: var(--text-secondary);
   letter-spacing: 0.7px;
 }
 footer .footer-card .divider-line {
@@ -178,7 +180,7 @@ footer .footer-card .divider-line {
     display: block;
     width: 1px;
     height: 3.5rem;
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: var(--border-color);
     flex-shrink: 0;
   }
   footer .footer-card .icons-container {
@@ -202,5 +204,5 @@ footer .footer-card .divider-line {
 .whatsapp-icon {
   width: 3rem;
   height: 3rem;
-  filter: brightness(0) saturate(100%) invert(78%) sepia(3%) saturate(15%) hue-rotate(314deg) brightness(92%) contrast(89%);
+  filter: var(--icon-filter);
 }/*# sourceMappingURL=Footer.css.map */

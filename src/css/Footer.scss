@@ -1,262 +1,240 @@
-
-
-
 @font-face {
   font-family: crimsonn;
   src: url(fonts/CrimsonText-Regular.ttf);
 }
 
-$filter-green: invert(74%) sepia(23%)
-saturate(587%) hue-rotate(76deg)
-brightness(101%) contrast(92%);
-$filter-silver: brightness(0) saturate(100%)
-invert(78%) sepia(3%)
-saturate(15%) hue-rotate(314deg)
-brightness(92%) contrast(89%);
-$filter-white: brightness(0) invert(1);
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 4rem;
+  padding: 0 1rem 2rem 1rem;
+  position: relative;
+  animation: fadeSlideUp 0.6s ease-out both;
+  animation-delay: 2s;
 
-$secondary-text: rgb(176, 179, 185);
-$bg-color2: rgb(23, 24, 26);
-$bg-color3: rgb(37, 40, 46);
-$accent: rgb(75, 80, 88);
-$accent-bg: rgb(65, 66, 66);
-$btn-color1: rgb(60, 65, 110);
-$border-color: rgba(255, 255, 255, 0.08);
+  .scroll-top-btn {
+    width: 3.4rem;
+    height: 3.4rem;
+    border-radius: 50%;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-primary);
+    box-shadow: 0 0 12px var(--glow-shadow);
 
-footer{
+    &:hover {
+      cursor: pointer;
+      background-color: var(--accent-bg);
+    }
+  }
+
+  .footer-card {
     width: 100%;
+    max-width: 26rem;
+    background-color: var(--card-bg-translucent);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    margin-top: 4rem;
-    padding: 0 1rem 2rem 1rem;
-    position: relative;
+    text-align: center;
+    gap: 1.2rem;
 
-    .scroll-top-btn{
-        width: 3.4rem;
-        height: 3.4rem;
+    .name-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+
+      h2 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+
+        img {
+          width: 1.6rem;
+          height: 1.6rem;
+          filter: var(--icon-filter);
+        }
+      }
+
+      p {
+        font-size: 1rem;
+        color: var(--text-secondary);
+        letter-spacing: 0.5px;
+      }
+    }
+
+    .divider-dot {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.6rem;
+      width: 100%;
+
+      &::before, &::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background-color: var(--border-color);
+      }
+
+      .dot {
+        width: 0.35rem;
+        height: 0.35rem;
         border-radius: 50%;
-        background-color: $bg-color3;
-        border: 1px solid $border-color;
+        background-color: var(--accent-border);
+        flex-shrink: 0;
+      }
+    }
+
+    .icons-container {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+
+      .icon {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background-color: var(--bg-tertiary);
+        border: 1px solid var(--border-color);
         display: flex;
         justify-content: center;
         align-items: center;
-        color: white;
-        box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
 
-        &:hover{
-            cursor: pointer;
-            background-color: $accent-bg;
+        img {
+          width: 1.5rem;
+          height: 1.5rem;
+          filter: var(--icon-filter);
         }
+
+        &:hover {
+          cursor: pointer;
+          background-color: var(--accent-bg);
+        }
+      }
     }
 
-    .footer-card{
-        width: 100%;
-        max-width: 26rem;
-        background-color: rgba(37, 40, 46, 0.6);
-        backdrop-filter: blur(10px);
-        border: 1px solid $border-color;
-        border-radius: 16px;
-        padding: 2rem 1.5rem;
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+
+      .contact-row {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 1.2rem;
-
-        .name-container{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-
-            h2{
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: 0.6rem;
-                font-size: 2rem;
-                font-weight: 700;
-                letter-spacing: 1px;
-
-                img{
-                    width: 1.6rem;
-                    height: 1.6rem;
-                    filter: $filter-silver;
-                }
-            }
-
-            p{
-                font-size: 1rem;
-                color: $secondary-text;
-                letter-spacing: 0.5px;
-            }
-        }
-
-        .divider-dot{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 0.6rem;
-            width: 100%;
-
-            &::before, &::after{
-                content: "";
-                flex: 1;
-                height: 1px;
-                background-color: $border-color;
-            }
-
-            .dot{
-                width: 0.35rem;
-                height: 0.35rem;
-                border-radius: 50%;
-                background-color: $accent;
-                flex-shrink: 0;
-            }
-        }
-
-        .icons-container{
-            display: flex;
-            flex-direction: row;
-            gap: 1rem;
-
-            .icon{
-                width: 3rem;
-                height: 3rem;
-                border-radius: 50%;
-                background-color: $bg-color3;
-                border: 1px solid $border-color;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                img{
-                    width: 1.5rem;
-                    height: 1.5rem;
-                    filter: $filter-white;
-                }
-
-                &:hover{
-                    cursor: pointer;
-                    background-color: $accent-bg;
-                }
-            }
-        }
-
-        .contact-info{
-            display: flex;
-            flex-direction: column;
-            gap: 0.7rem;
-
-            .contact-row{
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
-                gap: 0.6rem;
-                color: $secondary-text;
-                
-
-                svg{
-                    flex-shrink: 0;
-                }
-
-                span{
-                    font-size: 0.95rem;
-                    letter-spacing: 0.3px;
-
-                    a{
-                        font-size: 1.3rem;
-                        letter-spacing: 1px;
-                        text-decoration: none;
-                        color: white;
-                    }
-                }
-            }
-        }
-
-        .copyright{
-            font-size: 1.15rem;
-            color: $secondary-text;
-            letter-spacing: 0.7px;
-        }
-
-        .divider-line{
-            display: none;
-        }
-    }
-}
-
-@media (min-width: 768px){
-    footer{
         flex-direction: row;
-        max-width: 80rem;
-        margin: 4rem auto 0 auto;
-        // padding: 0 1rem 2rem 1rem;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        color: var(--text-secondary);
 
-        .scroll-top-btn{
-            order: 2;
+        svg {
+          flex-shrink: 0;
         }
 
-        .footer-card{
-            max-width: none;
-            flex: 1;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            text-align: left;
-            padding: 1.8rem 2.5rem;
-            gap: 2rem;
-            order: 1;
+        span {
+          font-size: 0.95rem;
+          letter-spacing: 0.3px;
 
-            .name-container{
-                align-items: flex-start;
-                gap: 0.5rem;
-                
-                margin-bottom: 1rem;
-
-                h2{
-                    font-size: 2rem;
-                }
-            }
-
-            .divider-line{
-                display: block;
-                width: 1px;
-                height: 3.5rem;
-                background-color: $border-color;
-                flex-shrink: 0;
-            }
-
-            .icons-container{
-                gap: 0.8rem;
-
-                .icon{
-                    width: 2.8rem;
-                    height: 2.8rem;
-                }
-            }
-
-            .mobile-only{
-                display: none;
-            }
-
-            .copyright{
-                position: absolute;
-                left: 2.5rem;
-                bottom: 1.3rem;
-                font-size: 1.15rem;
-                margin-top: 2rem;
-                
-            }
+          a {
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: var(--text-primary);
+          }
         }
+      }
     }
+
+    .copyright {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.7px;
+    }
+
+    .divider-line {
+      display: none;
+    }
+  }
 }
 
-.whatsapp-icon{
-    width: 3rem;
-    height: 3rem;
-    filter: $filter-silver;
+@media (min-width: 768px) {
+  footer {
+    flex-direction: row;
+    max-width: 80rem;
+    margin: 4rem auto 0 auto;
+
+    .scroll-top-btn {
+      order: 2;
+    }
+
+    .footer-card {
+      max-width: none;
+      flex: 1;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+      padding: 1.8rem 2.5rem;
+      gap: 2rem;
+      order: 1;
+
+      .name-container {
+        align-items: flex-start;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+
+        h2 {
+          font-size: 2rem;
+        }
+      }
+
+      .divider-line {
+        display: block;
+        width: 1px;
+        height: 3.5rem;
+        background-color: var(--border-color);
+        flex-shrink: 0;
+      }
+
+      .icons-container {
+        gap: 0.8rem;
+
+        .icon {
+          width: 2.8rem;
+          height: 2.8rem;
+        }
+      }
+
+      .mobile-only {
+        display: none;
+      }
+
+      .copyright {
+        position: absolute;
+        left: 2.5rem;
+        bottom: 1.3rem;
+        font-size: 1.15rem;
+        margin-top: 2rem;
+      }
+    }
+  }
+}
+
+.whatsapp-icon {
+  width: 3rem;
+  height: 3rem;
+  filter: var(--icon-filter);
 }

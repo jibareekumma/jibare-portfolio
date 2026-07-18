@@ -61,6 +61,36 @@ const Projects = function(){
     window.open(url, "_blank", "noopener,noreferrer")
 }
 
+
+const [submitStatus, setSubmitStatus] = useState("")
+
+const encode = function(data){
+    return Object.keys(data)
+        .map(function(key){
+            return encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+        })
+        .join("&")
+}
+
+const handleSubmit = function(){
+    if(!formData.name || !formData.email || !formData.message){
+        setSubmitStatus("Please fill in all fields.")
+        return
+    }
+
+    fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...formData })
+    })
+    .then(function(){
+        setSubmitStatus("Message sent — thank you!")
+        setFormData({ name: "", email: "", message: "" })
+    })
+    .catch(function(){
+        setSubmitStatus("Something went wrong, please try again.")
+    })
+}
     return<>
 
         <div className = 'projects-container' 
@@ -145,6 +175,10 @@ const Projects = function(){
                         value={formData.message}
                         onChange={handleChange('message')}
                     ></textarea>
+
+
+                    <input type="text" name="bot-field" 
+                    style={{ display: "none" }} />
                 </div>
 
                 <div className="work-together-text">
@@ -178,11 +212,15 @@ const Projects = function(){
                     </div>
                 </div>
 
-                <button className="send-message-btn">
+                <button className="send-message-btn"
+                    onClick={handleSubmit}
+                >
                     Send Message
-                    <img src={sendIcon} alt="Send icon" loading="lazy" />
+                    <img src={sendIcon} alt="Send icon" 
+                    loading="lazy" />
                 </button>
-
+                {submitStatus && <p className="submit-status">
+                    {submitStatus}</p>}
             </div>
 
         </div>

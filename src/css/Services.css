@@ -8,6 +8,8 @@
   flex-direction: column;
   gap: 1rem;
   margin-top: 4rem;
+  animation: fadeSlideUp 0.6s ease-out both;
+  animation-delay: 1.2s;
 }
 .services-container button {
   display: flex;
@@ -15,10 +17,10 @@
   gap: 0.7rem;
   justify-content: center;
   align-items: center;
-  background-color: rgb(37, 40, 46);
+  background-color: var(--bg-tertiary);
   max-width: 10rem;
   height: 3rem;
-  color: white;
+  color: var(--text-primary);
   font-size: 1.2rem;
   font-weight: 550;
   font-family: crimsonn;
@@ -30,7 +32,7 @@
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
-  background-color: white;
+  background-color: var(--text-primary);
   animation: pulse-dot 2s infinite;
 }
 .services-container button img {
@@ -53,13 +55,13 @@
   flex-direction: row;
   align-items: center;
   gap: 1rem;
-  background-color: rgb(37, 40, 46);
+  background-color: var(--bg-tertiary);
   border: none;
   border-radius: 10px;
   padding: 1rem;
 }
 .services-container .services-items .item:hover {
-  border: 0.5px solid rgb(75, 80, 88);
+  border: 0.5px solid var(--accent-border);
   cursor: pointer;
 }
 .services-container .services-items .item .icon-container {
@@ -68,14 +70,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(65, 66, 66);
+  background-color: var(--accent-bg);
   border-radius: 8px;
   flex-shrink: 0;
 }
 .services-container .services-items .item .icon-container img {
   width: 2.5rem;
   height: 2.5rem;
-  filter: brightness(0) invert(1);
+  filter: var(--icon-filter);
 }
 .services-container .services-items .item .text-container {
   flex: 1;
@@ -90,20 +92,20 @@
 }
 .services-container .services-items .item .text-container p {
   font-size: 1.1rem;
-  color: rgb(176, 179, 185);
+  color: var(--text-secondary);
   letter-spacing: 1px;
   line-height: 1.5rem;
 }
 .services-container .services-items .item > img {
   width: 1.5rem;
   height: 1.5rem;
-  filter: brightness(0) invert(1);
+  filter: var(--icon-filter);
   flex-shrink: 0;
 }
 .services-container .services-items .item > img:hover {
   width: 1.6rem;
   height: 1.6rem;
-  filter: brightness(0) saturate(100%) invert(78%) sepia(3%) saturate(15%) hue-rotate(314deg) brightness(92%) contrast(89%);
+  opacity: 0.75;
   cursor: pointer;
 }
 .services-container .services-items .item .modal-container {
@@ -164,8 +166,8 @@
   position: relative;
   width: 100%;
   max-height: 85vh;
-  background-color: rgb(23, 24, 26);
-  border: 1px solid rgb(75, 80, 88);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--accent-border);
   border-radius: 20px 20px 0 0;
   padding: 1.5rem;
   display: flex;
@@ -174,20 +176,20 @@
   overflow-y: auto;
   animation: slide-up 0.3s ease;
   scrollbar-width: thin;
-  scrollbar-color: rgb(65, 66, 66) transparent;
+  scrollbar-color: var(--accent-bg) transparent;
 }
 .service-modal-overlay .service-modal::-webkit-scrollbar {
   width: 0.4rem;
 }
 .service-modal-overlay .service-modal::-webkit-scrollbar-thumb {
-  background-color: rgb(65, 66, 66);
+  background-color: var(--accent-bg);
   border-radius: 10px;
 }
 .service-modal-overlay .service-modal .sheet-handle {
   width: 3rem;
   height: 0.3rem;
   border-radius: 10px;
-  background-color: rgb(75, 80, 88);
+  background-color: var(--accent-border);
   align-self: center;
 }
 .service-modal-overlay .service-modal .modal-close {
@@ -201,11 +203,11 @@
   height: 2.5rem;
   background: none;
   border: none;
-  color: rgb(176, 179, 185);
+  color: var(--text-secondary);
 }
 .service-modal-overlay .service-modal .modal-close:hover {
   cursor: pointer;
-  color: white;
+  color: var(--text-primary);
 }
 .service-modal-overlay .service-modal .modal-head {
   display: flex;
@@ -219,14 +221,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(65, 66, 66);
+  background-color: var(--accent-bg);
   border-radius: 8px;
   flex-shrink: 0;
 }
 .service-modal-overlay .service-modal .modal-head .icon-container img {
   width: 2.2rem;
   height: 2.2rem;
-  filter: brightness(0) invert(1);
+  filter: var(--icon-filter);
 }
 .service-modal-overlay .service-modal .modal-head .head-text {
   display: flex;
@@ -240,7 +242,7 @@
 }
 .service-modal-overlay .service-modal .modal-head .head-text p {
   font-size: 1.15rem;
-  color: rgb(176, 179, 185);
+  color: var(--text-secondary);
   line-height: 1.5rem;
   letter-spacing: 0.5px;
 }
@@ -248,12 +250,12 @@
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  border-top: 1px solid rgb(75, 80, 88);
+  border-top: 1px solid var(--accent-border);
   padding-top: 1.2rem;
 }
 .service-modal-overlay .service-modal .modal-body .block-label {
   font-size: 1.2rem;
-  color: white;
+  color: var(--text-primary);
   letter-spacing: 1.5px;
   font-weight: 550;
 }
@@ -276,20 +278,20 @@
 }
 .service-modal-overlay .service-modal .modal-body .offer-block .offer-row ul li {
   font-size: 1.15rem;
-  color: rgb(176, 179, 185);
+  color: var(--text-secondary);
   letter-spacing: 0.5px;
   list-style: disc;
   margin-left: 1.1rem;
 }
 .service-modal-overlay .service-modal .modal-body .offer-block .offer-row ul li::marker {
-  color: white;
+  color: var(--text-primary);
 }
 .service-modal-overlay .service-modal .modal-body .offer-block .offer-row .preview-card {
   display: none;
   width: 8rem;
   flex-shrink: 0;
-  background-color: rgb(37, 40, 46);
-  border: 1px solid rgb(75, 80, 88);
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--accent-border);
   border-radius: 8px;
   padding: 0.6rem;
   flex-direction: column;
@@ -304,18 +306,18 @@
   width: 0.4rem;
   height: 0.4rem;
   border-radius: 50%;
-  background-color: rgb(75, 80, 88);
+  background-color: var(--accent-border);
 }
 .service-modal-overlay .service-modal .modal-body .offer-block .offer-row .preview-card img {
   width: 100%;
-  filter: brightness(0) saturate(100%) invert(78%) sepia(3%) saturate(15%) hue-rotate(314deg) brightness(92%) contrast(89%);
+  filter: var(--icon-filter);
   opacity: 0.7;
 }
 .service-modal-overlay .service-modal .modal-body .tech-block {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  border-top: 1px solid rgb(75, 80, 88);
+  border-top: 1px solid var(--accent-border);
   padding-top: 1.2rem;
 }
 .service-modal-overlay .service-modal .modal-body .tech-block .tech-tags {
@@ -324,13 +326,13 @@
   gap: 0.6rem;
 }
 .service-modal-overlay .service-modal .modal-body .tech-block .tech-tags .tag {
-  background-color: rgb(37, 40, 46);
-  border: 1px solid rgb(75, 80, 88);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--accent-border);
   padding: 0.5rem 0.9rem;
   border-radius: 6px;
   font-size: 1.15rem;
   letter-spacing: 1px;
-  color: white;
+  color: var(--text-primary);
 }
 .service-modal-overlay .service-modal .view-work-btn {
   display: flex;
@@ -338,11 +340,11 @@
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  background-color: rgb(60, 65, 110);
+  background-color: var(--btn-accent);
   border: none;
   border-radius: 8px;
   height: 3.2rem;
-  color: white;
+  color: #ffffff;
   font-size: 1rem;
   font-weight: 550;
   letter-spacing: 0.5px;
@@ -354,7 +356,7 @@
 }
 .service-modal-overlay .service-modal .view-work-btn:hover {
   cursor: pointer;
-  background-color: rgb(70, 76, 128);
+  filter: brightness(1.15);
 }
 
 @keyframes slide-up {

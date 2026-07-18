@@ -8,6 +8,8 @@
   flex-direction: column;
   gap: 1.5rem;
   margin-top: 4rem;
+  animation: fadeSlideUp 0.6s ease-out both;
+  animation-delay: 1.6s;
 }
 .projects-container .projects-topbar {
   display: flex;
@@ -25,10 +27,10 @@
   gap: 0.8rem;
   align-items: center;
   justify-content: center;
-  background-color: rgb(37, 40, 46);
+  background-color: var(--bg-tertiary);
   max-width: 15rem;
   height: 3rem;
-  color: rgb(176, 179, 185);
+  color: var(--text-secondary);
   font-size: 1.15rem;
   font-weight: 550;
   font-family: crimsonn;
@@ -39,7 +41,7 @@
   width: 0.65rem;
   height: 1rem;
   border-radius: 50%;
-  background-color: white;
+  background-color: var(--text-primary);
   animation: pulse-dot 2s infinite;
 }
 .projects-container .projects-topbar .topbar-text h3 {
@@ -54,10 +56,10 @@
   justify-content: center;
   gap: 0.6rem;
   background: none;
-  border: 1px solid rgb(75, 80, 88);
+  border: 1px solid var(--accent-border);
   border-radius: 6px;
   height: 2.8rem;
-  color: white;
+  color: var(--text-primary);
   font-size: 1rem;
   letter-spacing: 0.7px;
   align-self: flex-start;
@@ -67,11 +69,11 @@
 .projects-container .projects-topbar .view-all-btn img {
   width: 0.9rem;
   height: 0.9rem;
-  filter: brightness(0) invert(1);
+  filter: var(--icon-filter);
 }
 .projects-container .projects-topbar .view-all-btn:hover {
   cursor: pointer;
-  border-color: rgb(176, 179, 185);
+  border-color: var(--text-secondary);
 }
 .projects-container .projects-grid {
   display: flex;
@@ -79,8 +81,8 @@
   gap: 1rem;
 }
 .projects-container .projects-grid .project-card {
-  background-color: rgb(37, 40, 46);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   overflow: hidden;
   display: flex;
@@ -88,7 +90,7 @@
 }
 .projects-container .projects-grid .project-card:hover {
   cursor: pointer;
-  border: 1px solid rgb(75, 80, 88);
+  border: 1px solid var(--accent-border);
 }
 .projects-container .projects-grid .project-card .project-image {
   width: 100%;
@@ -114,7 +116,7 @@
 }
 .projects-container .projects-grid .project-card .project-text p {
   font-size: 1.05rem;
-  color: rgb(176, 179, 185);
+  color: var(--text-secondary);
   line-height: 1.5rem;
   letter-spacing: 0.5px;
 }
@@ -125,11 +127,11 @@
   margin-top: 0.4rem;
 }
 .projects-container .projects-grid .project-card .project-text .tag-row .tag {
-  background-color: rgb(65, 66, 66);
+  background-color: var(--accent-bg);
   padding: 0.4rem 0.8rem;
   border-radius: 5px;
   font-size: 1.1rem;
-  color: white;
+  color: var(--text-primary);
 }
 .projects-container .contact-section {
   display: flex;
@@ -137,8 +139,8 @@
   gap: 1rem;
 }
 .projects-container .contact-section .testimonial-card {
-  background-color: rgb(37, 40, 46);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 1.5rem;
   display: flex;
@@ -152,13 +154,13 @@
 }
 .projects-container .contact-section .testimonial-card .testimonial-text {
   font-size: 1.15rem;
-  color: white;
+  color: var(--text-primary);
   line-height: 1.7rem;
   letter-spacing: 0.5px;
 }
 .projects-container .contact-section .testimonial-card .testimonial-name {
   font-size: 1.05rem;
-  color: rgb(176, 179, 185);
+  color: var(--text-secondary);
 }
 .projects-container .contact-section .testimonial-card .testimonial-dots {
   display: none;
@@ -170,19 +172,19 @@
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
-  background-color: rgb(75, 80, 88);
+  background-color: var(--accent-border);
 }
 .projects-container .contact-section .testimonial-card .testimonial-dots .dot:hover {
   cursor: pointer;
 }
 .projects-container .contact-section .testimonial-card .testimonial-dots .dot.active {
-  background-color: rgb(120, 130, 255);
+  background-color: var(--badge-accent);
   width: 1.2rem;
   border-radius: 10px;
 }
 .projects-container .contact-section .contact-form {
-  background-color: rgb(37, 40, 46);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 1.5rem;
   display: flex;
@@ -195,24 +197,24 @@
   gap: 1rem;
 }
 .projects-container .contact-section .contact-form input, .projects-container .contact-section .contact-form textarea {
-  background-color: rgb(23, 24, 26);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 0.9rem 1rem;
-  color: white;
+  color: var(--text-primary);
   font-size: 1.15rem;
   font-family: inherit;
   letter-spacing: 0.7px;
 }
 .projects-container .contact-section .contact-form input::-moz-placeholder, .projects-container .contact-section .contact-form textarea::-moz-placeholder {
-  color: rgb(176, 179, 185);
+  color: var(--text-secondary);
 }
 .projects-container .contact-section .contact-form input::placeholder, .projects-container .contact-section .contact-form textarea::placeholder {
-  color: rgb(176, 179, 185);
+  color: var(--text-secondary);
 }
 .projects-container .contact-section .contact-form input:focus, .projects-container .contact-section .contact-form textarea:focus {
   outline: none;
-  border-color: rgb(75, 80, 88);
+  border-color: var(--accent-border);
 }
 .projects-container .contact-section .contact-form textarea {
   min-height: 7rem;
@@ -225,7 +227,7 @@
 }
 .projects-container .contact-section .work-together-text .section-label {
   font-size: 1.2rem;
-  color: rgb(176, 179, 185);
+  color: var(--text-secondary);
   letter-spacing: 1.5px;
   font-weight: 550;
 }
@@ -236,7 +238,7 @@
 }
 .projects-container .contact-section .work-together-text p {
   font-size: 1.1rem;
-  color: rgb(176, 179, 185);
+  color: var(--text-secondary);
   line-height: 1.5rem;
 }
 .projects-container .contact-section .work-together-text .contact-links {
@@ -254,15 +256,15 @@
 .projects-container .contact-section .work-together-text .contact-links .contact-row img {
   width: 2rem;
   height: 2rem;
-  filter: brightness(0) invert(1);
+  filter: var(--icon-filter);
 }
 .projects-container .contact-section .work-together-text .contact-links .contact-row span {
   font-size: 1.3rem;
-  color: white;
+  color: var(--text-primary);
   letter-spacing: 0.3px;
 }
 .projects-container .contact-section .work-together-text .contact-links .contact-row span a {
-  color: white;
+  color: var(--text-primary);
   text-decoration: none;
   letter-spacing: 0.6px;
 }
@@ -272,11 +274,11 @@
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  background-color: rgb(65, 66, 66);
+  background-color: var(--accent-bg);
   border: none;
   border-radius: 10px;
   height: 3.2rem;
-  color: white;
+  color: var(--text-primary);
   font-size: 1.2rem;
   font-weight: 550;
   letter-spacing: 1px;
@@ -284,18 +286,18 @@
 .projects-container .contact-section .send-message-btn img {
   width: 1.2rem;
   height: 1.2rem;
-  filter: brightness(0) invert(1);
+  filter: var(--icon-filter);
 }
 .projects-container .contact-section .send-message-btn:hover {
   cursor: pointer;
-  background-color: rgb(75, 80, 88);
+  background-color: var(--accent-border);
 }
 
 @media (min-width: 768px) {
   .projects-container {
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-color);
     border-radius: 16px;
-    background-color: rgb(23, 24, 26);
+    background-color: var(--bg-secondary);
   }
   .projects-container .projects-topbar {
     flex-direction: row;
@@ -347,4 +349,11 @@
 .whatsapp-icon {
   width: 3rem;
   height: 3rem;
+  filter: var(--icon-filter);
+}
+
+.submit-status {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
 }/*# sourceMappingURL=Projects.css.map */
