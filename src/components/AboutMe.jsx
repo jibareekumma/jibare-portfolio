@@ -18,7 +18,7 @@ const AboutMe = function(){
     return<>
     
 
-        <div className="about-container">
+        <div className="about-container" id="about">
 
             <div className = 'text-container-about'>
                 <button>

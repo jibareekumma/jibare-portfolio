@@ -88,7 +88,8 @@ const Services = function(){
 
     return<>
 
-        <div className = 'services-container'>
+        <div className = 'services-container' 
+        id="services">
 
             <button>
                 <img src = {dotIcon} 

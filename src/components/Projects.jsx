@@ -7,6 +7,8 @@ import mortagePJ from "/photos/mortage-pj.png"
 import quoteIcon from "/icons/quote-icon.png"
 import sendIcon from "/icons/send-icon.png"
 
+import whatsappIcon from "/icons/whatsapp-icon.png"
+
 import "../css/Projects.css"
 import { useState } from "react"
 
@@ -14,6 +16,7 @@ const projectsData = [
     {
         image: aervynPJ,
         title: "Aervyn",
+        url: "https://aervyn.netlify.app",
         description: "A travel/vacation guide, that helps track flights, cars, hotels and their prices around the world and can help book them",
         tags: ["React", "Typescript", "TailwindCSS", 
             "Django", "Supabase"]
@@ -21,12 +24,14 @@ const projectsData = [
     {
         image: trackNestPJ,
         title: "TrackNest",
+        url: "https://tracknestt.netlify.app",
         description: "A project management app with real-time data sync and per-user data isolation.",
         tags: ["React", "Firebase", "Typescript", "Python"]
     },
     {
         image: mortagePJ,
         title: "Mortgage Calculator",
+        url: "https://mortagepaymentcal.netlify.app",
         description: "A web app that helps users estimate mortgage payments and plan their finances.",
         tags: ["JavaScript", "Tailwind", "SASS"]
     }
@@ -52,9 +57,15 @@ const Projects = function(){
         }
     }
 
+    const openExternalLink = function(url){
+    window.open(url, "_blank", "noopener,noreferrer")
+}
+
     return<>
 
-        <div className = 'projects-container'>
+        <div className = 'projects-container' 
+            id="projects"
+        >
 
             <div className="projects-topbar">
                 <div className="topbar-text">
@@ -74,7 +85,9 @@ const Projects = function(){
             <div className="projects-grid">
                 {projectsData.map(function(project, index){
                     return (
-                        <div className="project-card" key={index}>
+                        <div className="project-card" 
+                        onClick={() => openExternalLink(project.url)}
+                        key={index}>
                             <div className="project-image">
                                 <img src={project.image} alt={`${project.title} preview`} loading="lazy" />
                             </div>
@@ -141,15 +154,24 @@ const Projects = function(){
 
                     <div className="contact-links">
                         <div className="contact-row">
-                            <img src={sendIcon} alt="Email icon" loading="lazy" />
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.6"/>
+                            <path d="M3 7L12 13L21 7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
                             <span>
-                                <a href="mailto: jibareekumma@gmail.com">
+                                <a 
+                                 target="_blank"
+                                href="mailto: jibareekumma@gmail.com">
                                     jibareekumma@gmail.com</a></span>
                         </div>
                         <div className="contact-row">
-                            <img src={sendIcon} alt="Phone icon" loading="lazy" />
+                            <img src={whatsappIcon} 
+                            className="whatsapp-icon"
+                            alt="Phone icon" loading="lazy" />
                             <span>
-                                 <a href="tel: +234 913 033 0586">
+                                 <a 
+                                  target="_blank"
+                                 href="tel: +234 913 033 0586">
                                     +234 913 033 0586</a>
                             </span>
                         </div>

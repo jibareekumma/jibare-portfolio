@@ -103,8 +103,8 @@ footer .footer-card .icons-container .icon {
   align-items: center;
 }
 footer .footer-card .icons-container .icon img {
-  width: 1.3rem;
-  height: 1.3rem;
+  width: 1.5rem;
+  height: 1.5rem;
   filter: brightness(0) invert(1);
 }
 footer .footer-card .icons-container .icon:hover {
@@ -131,10 +131,16 @@ footer .footer-card .contact-info .contact-row span {
   font-size: 0.95rem;
   letter-spacing: 0.3px;
 }
+footer .footer-card .contact-info .contact-row span a {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: white;
+}
 footer .footer-card .copyright {
-  font-size: 0.9rem;
+  font-size: 1.15rem;
   color: rgb(176, 179, 185);
-  letter-spacing: 0.3px;
+  letter-spacing: 0.7px;
 }
 footer .footer-card .divider-line {
   display: none;
@@ -143,9 +149,8 @@ footer .footer-card .divider-line {
 @media (min-width: 768px) {
   footer {
     flex-direction: row;
-    max-width: 68rem;
+    max-width: 80rem;
     margin: 4rem auto 0 auto;
-    padding: 0 1rem 2rem 1rem;
   }
   footer .scroll-top-btn {
     order: 2;
@@ -163,10 +168,11 @@ footer .footer-card .divider-line {
   }
   footer .footer-card .name-container {
     align-items: flex-start;
-    gap: 0.8rem;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
   }
   footer .footer-card .name-container h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   footer .footer-card .divider-line {
     display: block;
@@ -189,6 +195,12 @@ footer .footer-card .divider-line {
     position: absolute;
     left: 2.5rem;
     bottom: 1.3rem;
-    font-size: 0.85rem;
+    font-size: 1.15rem;
+    margin-top: 2rem;
   }
+}
+.whatsapp-icon {
+  width: 3rem;
+  height: 3rem;
+  filter: brightness(0) saturate(100%) invert(78%) sepia(3%) saturate(15%) hue-rotate(314deg) brightness(92%) contrast(89%);
 }/*# sourceMappingURL=Footer.css.map */

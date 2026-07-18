@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   z-index: 90;
-  margin-right: -10rem;
+  margin-right: 2rem;
 }
 .theme-toggle .toggle-track {
   position: relative;
