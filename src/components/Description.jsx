@@ -50,12 +50,19 @@ const Description = function(){
                     <img src = {upperRightIcon} 
                     alt="View my works"  loading="lazy"/>
                 </button>
-                <button className = 'download-btn'>
+                    
+                        <button className = 'download-btn'>
+                            <a href="/documents/jibare-resume.pdf"
+                            download = "jibare-resume"
+                            >
                     Download Resuume
                     <img src = {downloadIcon} 
                     alt="Download Resume" 
                     loading="lazy" />
-                </button>
+                    </a>
+                    </button>
+                    
+                
             </div>
         </div>
         <div className = "desc-image">

@@ -92,6 +92,13 @@
   border: 0.2px solid var(--text-secondary);
   color: var(--text-primary);
 }
+.desc-btns .download-btn a {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  text-decoration: none;
+  color: white;
+}
 .desc-btns .download-btn img {
   filter: var(--icon-filter);
 }

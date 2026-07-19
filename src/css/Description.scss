@@ -97,7 +97,15 @@
     background-color: transparent;
     border: 0.2px solid var(--text-secondary);
     color: var(--text-primary);
-
+    
+    a{
+      display: flex;
+      flex-direction: row;
+      gap: 1.5rem;
+      text-decoration: none;
+      color: white;
+      
+    }
     img {
       filter: var(--icon-filter);
     }
@@ -272,3 +280,4 @@
     }
   }
 }
+
