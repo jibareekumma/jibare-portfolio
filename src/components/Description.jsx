@@ -52,7 +52,7 @@ const Description = function(){
                 </button>
                     
                         <button className = 'download-btn'>
-                            <a href="/documents/jibare-resume.pdf"
+                            <a href="/documents/jibare-resume-main.pdf"
                             download = "jibare-resume"
                             >
                     Download Resuume

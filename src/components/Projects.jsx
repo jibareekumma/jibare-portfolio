@@ -4,6 +4,7 @@
 import aervynPJ from "/photos/aervyn-pj.png"
 import trackNestPJ from "/photos/tracknest-pj.png"
 import mortagePJ from "/photos/mortage-pj.png"
+import veltrixPJ from "/photos/vetrixz-pj.png"
 import quoteIcon from "/icons/quote-icon.png"
 import sendIcon from "/icons/send-icon.png"
 
@@ -21,6 +22,17 @@ const projectsData = [
         tags: ["React", "Typescript", "TailwindCSS", 
             "Django", "Supabase"]
     },
+
+
+    {
+        image: veltrixPJ,
+        title: "Veltrix Ecommerce",
+        url: "https://veltrixz.netlify.app",
+        description: "React + Django ecommerce storefront with cart, sorting, and a component-driven design system.",
+        tags: ["JavaScript", "Tailwind", "Django"]
+    }, 
+
+    
     {
         image: trackNestPJ,
         title: "TrackNest",
@@ -28,6 +40,9 @@ const projectsData = [
         description: "A project management app with real-time data sync and per-user data isolation.",
         tags: ["React", "Firebase", "Typescript", "Python"]
     },
+
+    
+
     {
         image: mortagePJ,
         title: "Mortgage Calculator",
