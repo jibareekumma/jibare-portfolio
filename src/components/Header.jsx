@@ -1,7 +1,8 @@
 
 
 
-import logo from "/icons/favicon2.png"
+// import logo from "/icons/favicon2.png"
+import logo2 from "/icons/logo_new.png" 
 import hamburgerIcon from "/icons/hamburger-icon.png"
 import closeIcon from "/icons/cancel_icon2.png"
 import upperRightIcon from "/icons/upper-left-arr.png"
@@ -33,7 +34,7 @@ const Header = function(){
 
         <header id="home">
             <div className = 'logos-container'>
-                <img src = {logo} alt="jibare-logo"
+                <img src = {logo2} alt="jibare-logo"
                     loading="lazy"
                 />
                 <div className = 'logo-text'>
