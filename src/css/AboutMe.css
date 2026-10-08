@@ -1,170 +1,117 @@
-@font-face {
-  font-family: crimsonn;
-  src: url(fonts/CrimsonText-Regular.ttf);
+.about-section .about-card {
+  display: grid;
+  grid-template-columns: 4.4rem minmax(0, 1fr);
+  gap: 1.8rem 1.6rem;
+  align-items: start;
+  padding: 2.2rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-tertiary);
 }
-.about-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-top: 4rem;
-  animation: fadeSlideUp 0.6s ease-out both;
-  animation-delay: 0.8s;
+.about-section .about-icon {
+  display: grid;
+  place-items: center;
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 50%;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  color: var(--accent-soft);
 }
-.about-container .text-container-about {
-  display: flex;
-  flex-direction: column;
+.about-section .about-icon svg {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+.about-section .about-text h4 {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+.about-section .about-text p {
+  max-width: 62rem;
+  font-size: 1.35rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+.about-section .about-chips {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
 }
-.about-container .text-container-about button {
+.about-section .about-chip {
   display: flex;
-  flex-direction: row;
-  gap: 0.7rem;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  background-color: var(--bg-tertiary);
-  max-width: 10rem;
-  height: 3rem;
-  color: var(--text-secondary);
-  font-size: 1.2rem;
-  font-weight: 550;
-  font-family: crimsonn;
-  border-radius: 4px;
-}
-.about-container .text-container-about button img {
-  width: 1rem;
-  height: 1rem;
-  filter: var(--icon-filter);
-  animation: pulse-dot 2s infinite;
-}
-.about-container .text-container-about h5 {
-  margin-top: 0rem;
-  font-size: 2.3rem;
-  width: 80%;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-.about-container .text-container-about .about-me-p {
-  width: 80%;
-  font-size: 1.3rem;
-  color: var(--text-secondary);
-  letter-spacing: 1px;
-  line-height: 1.8rem;
-}
-.about-container .text-container-about .redirect-btn {
-  max-width: 15rem;
-  display: flex;
-  flex-direction: row;
-  gap: 0.8rem;
   justify-content: center;
-  align-items: center;
-  border: 1px solid var(--accent-border);
-  height: 3.5rem;
-  border-radius: 8px;
-  background: transparent;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  gap: 0.9rem;
+  height: 8rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background: var(--chip-bg);
+  font-size: 1.15rem;
+  text-align: center;
+  color: var(--text-secondary);
+  transition: transform 0.35s var(--ease-out), border-color 0.3s ease, color 0.3s ease, background-color 0.4s ease;
 }
-.about-container .text-container-about .redirect-btn:hover {
-  cursor: pointer;
-  border-color: #6366f1;
-  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.35), 0 0 16px rgba(99, 102, 241, 0.25);
+.about-section .about-chip svg {
+  width: 2.2rem;
+  height: 2.2rem;
+  color: var(--accent-soft);
 }
-.about-container .text-container-about .redirect-btn:active {
+.about-section .about-chip:hover {
+  transform: translateY(-0.4rem);
   border-color: var(--accent-border);
-  box-shadow: none;
-}
-.about-container .text-container-about .redirect-btn .btn-icon {
-  width: 1.4rem;
-  height: 1.4rem;
   color: var(--text-primary);
 }
-.about-container .text-container-about .redirect-btn p {
-  letter-spacing: 1px;
-  font-size: 1.4rem;
-  font-weight: 500;
-}
-.about-container .text-container-about .redirect-btn img {
-  width: 1.5rem;
-  height: 1.5rem;
-  filter: var(--icon-filter);
-}
-.about-container .skills-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-.about-container .skills-container .container-item {
-  display: flex;
-  flex-direction: row;
-  gap: 1.5rem;
-  height: 6rem;
-  background-color: var(--bg-tertiary);
-  border: none;
-  border-radius: 10px;
+.about-section .about-link {
+  grid-column: 1/-1;
+  justify-self: start;
+  display: inline-flex;
   align-items: center;
-  padding: 1rem 1rem;
+  gap: 0.7rem;
+  font-size: 1.3rem;
+  color: var(--accent-soft);
+  transition: color 0.25s ease;
 }
-.about-container .skills-container .container-item .icon-container {
-  height: 4rem;
-  width: 4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--accent-bg);
-  border: none;
-  border-radius: 5px;
+.about-section .about-link svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  transition: transform 0.3s var(--ease-out);
 }
-.about-container .skills-container .container-item .icon-container img {
-  width: 2rem;
-  height: 2rem;
-  filter: var(--icon-filter);
+.about-section .about-link:hover {
+  color: var(--text-primary);
 }
-.about-container .skills-container .container-item .designer-icon {
-  width: 4.7rem;
-  height: 4rem;
-}
-.about-container .skills-container .text-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-.about-container .skills-container .text-container h5 {
-  font-size: 1.4rem;
-  letter-spacing: 1px;
-  font-weight: 550;
-}
-.about-container .skills-container .text-container p {
-  font-size: 1.2rem;
-  color: var(--text-secondary);
-  letter-spacing: 1px;
+.about-section .about-link:hover svg {
+  transform: translateX(0.4rem);
 }
 
-@media (min-width: 768px) {
-  .about-container {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 3rem;
+@media (min-width: 760px) {
+  .about-section .about-card {
+    grid-template-columns: 4.4rem minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    padding: 2.4rem 2.8rem;
   }
-  .about-container .text-container-about {
-    width: 42%;
+  .about-section .about-card .about-icon {
+    grid-row: 1/span 2;
   }
-  .about-container .text-container-about h5 {
-    width: 100%;
-    font-size: 2.6rem;
+  .about-section .about-card .about-text {
+    grid-row: 1/span 2;
   }
-  .about-container .text-container-about .about-me-p {
-    width: 100%;
-  }
-  .about-container .skills-container {
-    width: 55%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  .about-section .about-card .about-chips {
+    grid-column: 3;
+    grid-row: 1;
+    display: flex;
     gap: 1rem;
   }
-  .about-container .skills-container .container-item {
-    height: auto;
-    min-height: 9rem;
-    align-items: flex-start;
-    padding: 1.2rem;
+  .about-section .about-card .about-chip {
+    width: 9.6rem;
+  }
+  .about-section .about-card .about-link {
+    grid-column: 3;
+    grid-row: 2;
+    justify-self: end;
+    align-self: end;
   }
 }/*# sourceMappingURL=AboutMe.css.map */

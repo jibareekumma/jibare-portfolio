@@ -1,5 +1,5 @@
 @font-face {
-  font-family: crimsonn;
+  font-family: var(--font-body);
   src: url(fonts/CrimsonText-Regular.ttf);
 }
 
@@ -55,7 +55,7 @@
       color: var(--text-secondary);
       font-size: 1rem;
       font-weight: 550;
-      font-family: crimsonn;
+      font-family: var(--font-body);
       border-radius: 5px;
 
       .badge-dot {

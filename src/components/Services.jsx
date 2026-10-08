@@ -2,7 +2,6 @@
 
 
 
-import dotIcon from "/icons/dotIcon.png"
 import seoIcon from "/icons/seo_icon.png"
 import codeIcon from "/icons/code_icon.png"
 import designIcon from "/icons/design_icon.png"
@@ -84,100 +83,95 @@ const Services = function(){
         setActiveModal(null)
     }
 
+    const viewWork = function(){
+        closeModal()
+        const el = document.getElementById("projects")
+        if(el){
+            el.scrollIntoView({ behavior: "smooth", block: "start" })
+        }
+    }
+
     const activeData = activeModal ? servicesData[activeModal] : null
 
     return<>
 
-        <div className = 'services-container' 
+        <section className = 'services-section'
         id="services">
 
-            <button>
-                <img src = {dotIcon} 
-                alt="Dot Icon" loading="lazy" />
-                WHAT I DO
-            </button>
-
-            <h3>Services I Offer</h3>
-
-
-
+            <div className="section-head" data-reveal>
+                <span className="section-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/>
+                        <rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/>
+                        <rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/>
+                        <rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/>
+                    </svg>
+                </span>
+                <h3>Services I Offer</h3>
+                <span className="section-line"></span>
+            </div>
 
             <div className = 'services-items'>
 
-
-                <div className = 'item web-dev-item' onClick={() => setActiveModal('web-dev')}>
+                <button className = 'item' data-reveal style={{ "--i": 0 }}
+                    onClick={() => setActiveModal('web-dev')}
+                >
                     <div className="icon-container">
-                    <img src = {webIcon} 
-                    alt="Web development icon" loading="lazy"/>
+                        <img src = {webIcon} alt="Web Development icon" loading="lazy"/>
                     </div>
                     <div className = 'text-container'>
                         <h5>Web Development</h5>
-                        <p>
-                            Custom websites and applications built
-                            with modern technologies.
-                        </p>
+                        <p>Custom websites and applications built with modern technologies.</p>
                     </div>
-                    <img src={rightIcon} 
+                    <img className="item-arrow" src={rightIcon}
                     alt="Right Arrow Icon" loading="lazy" />
-                </div>
+                </button>
 
-
-                <div className = 'item seo-item' onClick={() => setActiveModal('seo')}>
+                <button className = 'item' data-reveal style={{ "--i": 1 }}
+                    onClick={() => setActiveModal('seo')}
+                >
                     <div className="icon-container">
-                    <img src = {seoIcon} 
-                    alt="SEO icon" loading="lazy"/>
+                        <img src = {seoIcon} alt="SEO Analysis icon" loading="lazy"/>
                     </div>
                     <div className = 'text-container'>
                         <h5>SEO Analysis</h5>
-                        <p>
-                            Technical SEO to help your business
-                            rank accross search engines and LLMs, 
-                            and help beat your competitors
-                        </p>
+                        <p>Technical SEO to help your business rank across search engines and LLMs, and beat your competitors.</p>
                     </div>
-                    <img src={rightIcon} 
+                    <img className="item-arrow" src={rightIcon}
                     alt="Right Arrow Icon" loading="lazy" />
-                </div>
+                </button>
 
-
-                <div className = 'item api-dev-item' onClick={() => setActiveModal('api-dev')}>
+                <button className = 'item' data-reveal style={{ "--i": 2 }}
+                    onClick={() => setActiveModal('api-dev')}
+                >
                     <div className="icon-container">
-                    <img src = {codeIcon} 
-                    alt="API development icon" loading="lazy"/>
+                        <img src = {codeIcon} alt="API Development icon" loading="lazy"/>
                     </div>
                     <div className = 'text-container'>
                         <h5>API Development</h5>
-                        <p>
-                            RESTful APIs and intergration for seamless
-                            functionalities.
-                        </p>
+                        <p>RESTful APIs and integrations for seamless functionality.</p>
                     </div>
-                    <img src={rightIcon} 
+                    <img className="item-arrow" src={rightIcon}
                     alt="Right Arrow Icon" loading="lazy" />
-                </div>
+                </button>
 
-
-                <div className = 'item design-item' onClick={() => setActiveModal('design')}>
+                <button className = 'item' data-reveal style={{ "--i": 3 }}
+                    onClick={() => setActiveModal('design')}
+                >
                     <div className="icon-container">
-                    <img src = {designIcon} 
-                    alt="Web development icon" loading="lazy"/>
+                        <img src = {designIcon} alt="WEB & APP Designs icon" loading="lazy"/>
                     </div>
                     <div className = 'text-container'>
                         <h5>WEB & APP Designs</h5>
-                        <p>
-                            Good and modern designs that encourages users 
-                            to stay longer and are easy to use
-     
-                        </p>
+                        <p>Good and modern designs that encourage users to stay longer and are easy to use.</p>
                     </div>
-                    <img src={rightIcon} 
+                    <img className="item-arrow" src={rightIcon}
                     alt="Right Arrow Icon" loading="lazy" />
-                </div>
-
+                </button>
 
             </div>
 
-        </div>
+        </section>
 
 
         {activeData &&
@@ -206,7 +200,7 @@ const Services = function(){
                     <div className="modal-body">
 
                         <div className="offer-block">
-                            <span className="block-label">WHAT I OFFER</span>
+                            <span className="block-label">What I offer</span>
                             <div className="offer-row">
                                 <ul>
                                     {activeData.offers.map(function(offer, index){
@@ -219,14 +213,14 @@ const Services = function(){
                                         <span></span>
                                         <span></span>
                                     </div>
-                                    <img src = {activeData.image} 
+                                    <img src = {activeData.image}
                                     alt="Website preview" loading="lazy" />
                                 </div>
                             </div>
                         </div>
 
                         <div className="tech-block">
-                            <span className="block-label">TECHNOLOGIES I USE</span>
+                            <span className="block-label">Technologies I use</span>
                             <div className="tech-tags">
                                 {activeData.technologies.map(function(tech, index){
                                     return <span className="tag" key={index}>{tech}</span>
@@ -236,7 +230,7 @@ const Services = function(){
 
                     </div>
 
-                    <button className="view-work-btn">
+                    <button className="view-work-btn" onClick={viewWork}>
                         View My Work
                         <img src={rightIcon} alt="Right Arrow Icon" loading="lazy" />
                     </button>

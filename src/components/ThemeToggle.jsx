@@ -1,6 +1,3 @@
-
-
-
 import { useState, useEffect } from "react"
 import "../css/ThemeToggle.css"
 
@@ -26,18 +23,20 @@ const ThemeToggle = function(){
             title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
             aria-label="Toggle dark and light mode"
         >
-            <div className={theme === "dark" ? "toggle-track" : "toggle-track light"}>
-                <div className="toggle-icons">
-                    <svg className="icon sun" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="2"/>
-                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                    </svg>
-                    <svg className="icon moon" viewBox="0 0 24 24" fill="none">
-                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/>
-                    </svg>
-                </div>
-                <div className="toggle-thumb"></div>
-            </div>
+            {theme === "dark" ? (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/>
+                </svg>
+            ) : (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="4.2"/>
+                    <path d="M12 2.5v2.2M12 19.3v2.2M4.5 4.5l1.6 1.6M17.9 17.9l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.5 19.5l1.6-1.6M17.9 6.1l1.6-1.6"/>
+                </svg>
+            )}
+            <span className="theme-label">{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>
+            <span className={theme === "dark" ? "switch" : "switch on"}>
+                <span className="knob"></span>
+            </span>
         </button>
     )
 }

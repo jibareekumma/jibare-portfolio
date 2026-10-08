@@ -4,11 +4,6 @@ import mortagePJ from "/photos/mortage-pj.png"
 import veltrixPJ from "/photos/vetrixz-pj.png"
 import hospitalPJ from "/photos/hospital-pj.jpg"
 
-import quoteIcon from "/icons/quote-icon.png"
-import sendIcon from "/icons/send-icon.png"
-
-import whatsappIcon from "/icons/whatsapp-icon.png"
-
 import "../css/Projects.css"
 import { useState } from "react"
 
@@ -19,7 +14,7 @@ const projectsData = [
       title: "Veltrix Ecommerce",
       url: "https://veltrixz.netlify.app",
       description: "React + Django ecommerce storefront with cart, sorting, and a component-driven design system.",
-      tags: ["React", "PosgreSQL", "Django"]
+      tags: ["React", "PostgreSQL", "Django"]
   },
 
   {
@@ -27,7 +22,7 @@ const projectsData = [
       title: "Hospital Backend Management System",
       url: "https://github.com/jibareekumma/Hospital-Backend-management-system-Java-.git",
       description: "Java · JDBC · SQLite — Full backend architecture with role-based access, patient/staff/clinical modules",
-      tags: ["Java", "SQLite", "JDBC`"]
+      tags: ["Java", "SQLite", "JDBC"]
   },
     {
         image: aervynPJ,
@@ -60,94 +55,68 @@ const projectsData = [
 
 ]
 
-const testimonialsData = [
-    {
-        quote: "Jibare is a highly skilled developer and SEO expert. He delivered beyond expectations, and easy to work with!",
-        name: "Peace Eneji"
-    }
-]
+const arrowOut = <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M7 17 17 7M8 7h9v9"/>
+</svg>
 
 const Projects = function(){
 
-    const [activeTestimonial, setActiveTestimonial] = useState(0)
-    const [formData, setFormData] = useState({ name: "", email: "", message: "" })
     const [showAllProjects, setShowAllProjects] = useState(false)
 
     const displayedProjects = showAllProjects ? projectsData : projectsData.slice(0, 3)
 
-    const handleChange = function(field){
-        return function(e){
-            setFormData(function(prev){
-                return { ...prev, [field]: e.target.value }
-            })
-        }
+    const handleSpotlight = function(e){
+        const rect = e.currentTarget.getBoundingClientRect()
+        e.currentTarget.style.setProperty("--mx", `${e.clientX - rect.left}px`)
+        e.currentTarget.style.setProperty("--my", `${e.clientY - rect.top}px`)
     }
 
-    const openExternalLink = function(url){
-    window.open(url, "_blank", "noopener,noreferrer")
-}
-
-
-const [submitStatus, setSubmitStatus] = useState("")
-
-const encode = function(data){
-    return Object.keys(data)
-        .map(function(key){
-            return encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-        })
-        .join("&")
-}
-
-const handleSubmit = function(){
-    if(!formData.name || !formData.email || !formData.message){
-        setSubmitStatus("Please fill in all fields.")
-        return
-    }
-
-    fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact", ...formData })
-    })
-    .then(function(){
-        setSubmitStatus("Message sent — thank you!")
-        setFormData({ name: "", email: "", message: "" })
-    })
-    .catch(function(){
-        setSubmitStatus("Something went wrong, please try again.")
-    })
-}
     return<>
 
-        <div className = 'projects-container'
+        <section className = 'projects-section'
             id="projects"
         >
 
-            <div className="projects-topbar">
-                <div className="topbar-text">
-                    <button>
-                        <span className="badge-dot"></span>
-                        FEATURED PROJECTS
-                    </button>
-                    <h3>Some Things I've Built</h3>
-                </div>
-
+            <div className="section-head" data-reveal>
+                <span className="section-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="3" y="4" width="18" height="14" rx="2.5"/>
+                        <path d="M8 21h8M12 18v3M7 9l2.5 2L7 13M12 13h4"/>
+                    </svg>
+                </span>
+                <h3>Featured Projects</h3>
+                <span className="section-line"></span>
                 <button className="view-all-btn"
                     onClick={() => setShowAllProjects(!showAllProjects)}
                 >
-                    {showAllProjects ? "Show Less" : "View All Projects"}
-                    <img src={sendIcon} alt="Arrow icon" loading="lazy" />
+                    {showAllProjects ? "Show less" : "View all projects"}
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14M13 6l6 6-6 6"/>
+                    </svg>
                 </button>
             </div>
 
             <div className="projects-grid">
                 {displayedProjects.map(function(project, index){
+                    const isRepo = project.url.includes("github.com")
+                    const sourceUrl = project.source || (isRepo ? project.url : null)
+                    const liveUrl = isRepo ? null : project.url
+
                     return (
-                        <div className="project-card"
-                        onClick={() => openExternalLink(project.url)}
-                        key={index}>
+                        <article className={index < 3 ? "project-card" : "project-card late"}
+                            key={project.title}
+                            onMouseMove={handleSpotlight}
+                            data-reveal={index < 3 ? true : undefined}
+                            style={{ "--i": index }}
+                        >
                             <div className="project-image">
                                 <img src={project.image} alt={`${project.title} preview`} loading="lazy" />
+                                {index < 3 && <span className="featured-pill">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l2.4 6.6L21 10l-5.2 4.2L17.5 21 12 17.3 6.5 21l1.7-6.8L3 10l6.6-1.4z"/>
+                                    </svg>
+                                    Featured
+                                </span>}
                             </div>
                             <div className="project-text">
                                 <h5>{project.title}</h5>
@@ -157,101 +126,21 @@ const handleSubmit = function(){
                                         return <span className="tag" key={tagIndex}>{tag}</span>
                                     })}
                                 </div>
+                                <div className="project-links">
+                                    {liveUrl && <a href={liveUrl} target="_blank" rel="noopener noreferrer">
+                                        Live Demo {arrowOut}
+                                    </a>}
+                                    {sourceUrl && <a href={sourceUrl} target="_blank" rel="noopener noreferrer">
+                                        Source Code {arrowOut}
+                                    </a>}
+                                </div>
                             </div>
-                        </div>
+                        </article>
                     )
                 })}
             </div>
 
-            <div className="contact-section">
-
-                <div className="testimonial-card">
-                    <img src={quoteIcon} alt="Quote icon" loading="lazy" className="testimonial-quote-icon" />
-                    <p className="testimonial-text">{testimonialsData[activeTestimonial].quote}</p>
-                    <span className="testimonial-name">— {testimonialsData[activeTestimonial].name}</span>
-
-                    <div className="testimonial-dots">
-                        {[0, 1, 2, 3].map(function(dotIndex){
-                            return (
-                                <span
-                                    className={`dot ${activeTestimonial === dotIndex ? 'active' : ''}`}
-                                    key={dotIndex}
-                                    onClick={() => setActiveTestimonial(dotIndex)}
-                                ></span>
-                            )
-                        })}
-                    </div>
-                </div>
-
-                <div className="contact-form">
-                    <div className="input-row">
-                        <input
-                            type="text"
-                            placeholder="Your Name"
-                            value={formData.name}
-                            onChange={handleChange('name')}
-                        />
-                        <input
-                            type="email"
-                            placeholder="Your Email"
-                            value={formData.email}
-                            onChange={handleChange('email')}
-                        />
-                    </div>
-                    <textarea
-                        placeholder="Your Message"
-                        value={formData.message}
-                        onChange={handleChange('message')}
-                    ></textarea>
-
-
-                    <input type="text" name="bot-field"
-                    style={{ display: "none" }} />
-                </div>
-
-                <div className="work-together-text">
-                    <span className="section-label">LET'S WORK TOGETHER</span>
-                    <h4>Have a project in mind?</h4>
-                    <p>I'd love to hear about it. Let's build something great together.</p>
-
-                    <div className="contact-links">
-                        <div className="contact-row">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                            <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.6"/>
-                            <path d="M3 7L12 13L21 7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                            <span>
-                                <a
-                                 target="_blank"
-                                href="mailto: jibareekumma@gmail.com">
-                                    jibareekumma@gmail.com</a></span>
-                        </div>
-                        <div className="contact-row">
-                            <img src={whatsappIcon}
-                            className="whatsapp-icon"
-                            alt="Phone icon" loading="lazy" />
-                            <span>
-                                 <a
-                                  target="_blank"
-                                 href="tel: +234 913 033 0586">
-                                    +234 913 033 0586</a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <button className="send-message-btn"
-                    onClick={handleSubmit}
-                >
-                    Send Message
-                    <img src={sendIcon} alt="Send icon"
-                    loading="lazy" />
-                </button>
-                {submitStatus && <p className="submit-status">
-                    {submitStatus}</p>}
-            </div>
-
-        </div>
+        </section>
     </>
 }
 

@@ -1,120 +1,82 @@
-
-
-
-
-import upperRightIcon from "/icons/upper-left-arr.png"
-import codeIcon from "/icons/code_icon.png"
-import seoIcon from "/icons/seo_icon.png"
-import designIcon from "/icons/design_icon.png"
-import speedIcon from "/icons/speed_icon.png"
-import dotIcon from "/icons/dotIcon.png"
-
-
 import "../css/AboutMe.css"
 import { useNavigate } from "react-router-dom"
+
+const aboutChips = [
+    {
+        label: "Problem Solver",
+        icon: <>
+            <path d="M9 18h6M10 21h4"/>
+            <path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/>
+        </>
+    },
+    {
+        label: "Lifelong Learner",
+        icon: <>
+            <path d="M12 6c-1.6-1.3-3.8-2-6.5-2H3v14h2.5c2.7 0 4.9.7 6.5 2 1.6-1.3 3.8-2 6.5-2H21V4h-2.5c-2.7 0-4.9.7-6.5 2z"/>
+            <path d="M12 6v14"/>
+        </>
+    },
+    {
+        label: "Tech Enthusiast",
+        icon: <>
+            <path d="M13 2 4 14h7l-1 8 9-12h-7z"/>
+        </>
+    }
+]
 
 const AboutMe = function(){
 
     const navigate = useNavigate();
     return<>
-    
 
-        <div className="about-container" id="about">
+        <section className="about-section" id="about">
 
-            <div className = 'text-container-about'>
-                <button>
-                    <img src = {
-                        dotIcon
-                    } alt="Dot" loading="lazy" />
-                    ABOUT ME
-                </button>
-                <h5>
-                    I turn ideas into clean, 
-                    performant and scalable solutions.
-                </h5>
-                <p className = 'about-me-p'>With a strong foundation in Systems designs, 
-                    frontend
-                    and backend technologies, I enjoy crafting seamless
-                    digital ecperiences and optimizing them for search engines.
+            <div className="about-card" data-reveal>
 
-                </p>
-                <div className="redirect-btn"
-                    onClick = {() => navigate('/more-about-me')}
-                >
-                    <svg className="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12" cy="8" r="3.2" stroke="currentColor" strokeWidth="1.8"/>
-                        <path d="M5 19c0-3.3 3.1-6 7-6s7 2.7 7 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+                <span className="about-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="9"/>
+                        <circle cx="12" cy="10" r="3"/>
+                        <path d="M6.5 18.2c1-2.4 3.2-3.7 5.5-3.7s4.5 1.3 5.5 3.7"/>
                     </svg>
-                    <p>More About Me</p>
-                    <img src = {upperRightIcon} 
-                    alt="Upper Right Icon" loading="lazy" />
+                </span>
+
+                <div className="about-text">
+                    <h4>About Me</h4>
+                    <p>
+                        I turn ideas into clean, performant and scalable
+                        solutions. With a strong foundation in system design,
+                        frontend and backend technologies, I enjoy crafting
+                        seamless digital experiences and optimizing them
+                        for search engines.
+                    </p>
                 </div>
+
+                <ul className="about-chips">
+                    {aboutChips.map(function(chip){
+                        return (
+                            <li className="about-chip" key={chip.label}>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                                    {chip.icon}
+                                </svg>
+                                {chip.label}
+                            </li>
+                        )
+                    })}
+                </ul>
+
+                <button className="about-link"
+                    onClick={() => navigate('/more-about-me')}
+                >
+                    Learn more about me
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14M13 6l6 6-6 6"/>
+                    </svg>
+                </button>
+
             </div>
 
-
-
-            <div className="skills-container">
-                <div className = "class1 container-item">
-                    <div className = 'icon-container'>
-                    <img src= {codeIcon} 
-                    alt="container icon" loading="lazy" />
-                    </div>
-                    <div className = "text-container">
-                        <h5>Full Stack Development</h5>
-                        <p>Building end-to-end web
-                            applications.
-                        </p>
-                    </div>
-                </div>
-
-
-                <div className = "class2 container-item">
-                    <div className = 'icon-container'>
-                    <img src= {seoIcon} 
-                    alt="container icon" loading="lazy" />
-                    </div>
-                    <div className = "text-container">
-                        <h5>SEO Optimization</h5>
-                        <p>Improving your business ranking
-                            and driving organic traffic.
-                        </p>
-                    </div>
-                </div>
-
-
-                <div className = "class3 container-item">
-                    <div className = 'icon-container designer-icon'>
-                    <img src= {designIcon} 
-                    alt="container icon" loading="lazy"
-                     />
-                    </div>
-                    <div className = "text-container">
-                        <h5>Web Design Services</h5>
-                        <p>Giving your software
-                            clean and modern designs so users enjoy 
-                            their experience
-                        </p>
-                    </div>
-                </div>
-
-
-
-
-                <div className = "class4 container-item">
-                    <div className = 'icon-container'>
-                    <img src= {speedIcon} 
-                    alt="container icon" loading="lazy" />
-                    </div>
-                    <div className = "text-container">
-                        <h5>Full Stack Development</h5>
-                        <p>Building end-to-end web
-                            applications.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+        </section>
     </>
 }
 

@@ -1,19 +1,21 @@
-
-
-
-
-
-
-import dotIcon from "/icons/dotIcon.png"
-import upperRightIcon from "/icons/upper-left-arr.png"
-import downloadIcon from "/icons/download-icon.png"
-import myImage from "/photos/jibare-image.png"
 import reactLogo from "/icons/react_logo.png"
 import typescriptLogo from "/icons/typscript_logo.png"
 import taiwindLogo from "/icons/taiwind-logo.png"
 import djangoLogo from "/icons/django_logo.png"
 import postresqlLogo from "/icons/postresql-logo.png"
+
+import Astronaut from "./Astronaut"
 import "../css/Description.css"
+
+const nameLetters = "Jibare".split("")
+
+const heroSkills = [
+    { name: "React", logo: reactLogo },
+    { name: "Typescript", logo: typescriptLogo },
+    { name: "Tailwind", logo: taiwindLogo },
+    { name: "Django", logo: djangoLogo },
+    { name: "PostgreSQL", logo: postresqlLogo }
+]
 
 const Description = function(){
 
@@ -25,86 +27,82 @@ const Description = function(){
     }
 
     return<>
-    <div className = 'desc-container'>
-        <div className = "desc-info">
-            <div className = 'desc-title'>
-                <img src = {dotIcon} 
-                alt="Dot Icon" loading="lazy" />
-                <h6>FULL STACK DEVELOPER & SEO ANALYST</h6>
+    <section className="hero" id="home">
+
+        <div className="hero-glow"></div>
+
+        <div className="hero-status">
+            <span className="status-dot"></span>
+            Available for freelance
+        </div>
+
+        <div className="hero-stage">
+            <div className="hero-parallax">
+                <Astronaut/>
             </div>
-            <div className="desc-texts">
-                <h4>
-                    I FOCUS ON BUILDING TECH SOLUTIONS
-                </h4>
-                <p>
-                    I am Jibare, a Full Stack Developer 
-                    an SEO Analyst, passionate about building 
-                    fast, scalable and user-focused softwares
-                </p>
-            </div>
-            <div className = 'desc-btns'>
-                <button 
+        </div>
+
+        <div className="hero-copy">
+            <p className="hero-eyebrow">HELLO, I'M</p>
+
+            <h1 className="hero-name" aria-label="Jibare">
+                {nameLetters.map(function(letter, index){
+                    return (
+                        <span className="hero-letter" key={index}
+                            style={{ "--i": index }} aria-hidden="true"
+                        >
+                            {letter}
+                        </span>
+                    )
+                })}
+                <span className="hero-cursor" aria-hidden="true"></span>
+            </h1>
+
+            <p className="hero-roles">
+                Full Stack Developer <i>/</i> SEO Analyst
+            </p>
+
+            <p className="hero-text">
+                I build fast, scalable and user-focused software,
+                and I help businesses rank higher across search
+                engines and LLMs.
+            </p>
+
+            <div className="hero-actions">
+                <button className="btn btn-primary"
                     onClick={() => scrollToSection('projects')}
                 >
-                    View My Works
-                    <img src = {upperRightIcon} 
-                    alt="View my works"  loading="lazy"/>
+                    View My Projects
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14M13 6l6 6-6 6"/>
+                    </svg>
                 </button>
-                    
-                        <button className = 'download-btn'>
-                            <a href="/documents/jibare-resume-main.pdf"
-                            download = "jibare-resume"
-                            >
-                    Download Resuume
-                    <img src = {downloadIcon} 
-                    alt="Download Resume" 
-                    loading="lazy" />
-                    </a>
-                    </button>
-                    
-                
+                <a className="btn btn-ghost"
+                    href="/documents/jibare-resume-main.pdf"
+                    download="jibare-resume"
+                >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 4v11M7 11l5 5 5-5M5 20h14"/>
+                    </svg>
+                    Download Resume
+                </a>
             </div>
+
+            <ul className="hero-skills">
+                {heroSkills.map(function(skill){
+                    return (
+                        <li key={skill.name}>
+                            <img src={skill.logo} alt={`${skill.name} logo`} loading="lazy" />
+                            <p>{skill.name}</p>
+                        </li>
+                    )
+                })}
+            </ul>
         </div>
-        <div className = "desc-image">
-                <img src = {myImage} alt="My Image"
-                    loading="lazy"
-                />
-                <div className = "desc-available">
-                    <img src = {dotIcon} alt="Dot Icon" 
-                        loading="lazy"
-                    />
-                    <p>Available for Freelance</p>
-                </div>
-        </div>
-        </div>
-        <ul className = "desc-skills">
-            <li>
-                <img src = {reactLogo} 
-                alt="React Logo" loading="lazy" />
-                <p>React</p>
-            </li>
-            <li>
-                <img src = {typescriptLogo} 
-                alt="Typescript Logo" loading="lazy" />
-                <p>Typescript</p>
-            </li>
-            <li>
-                <img src = {taiwindLogo} 
-                alt="Taiwind Logo" loading="lazy" />
-                <p>Taiwind</p>
-            </li>
-            <li>
-                <img src = {djangoLogo} 
-                alt="DJango Logo" loading="lazy" />
-                <p>Django</p>
-            </li>
-            <li>
-                <img src = {postresqlLogo} 
-                alt="Postresql Logo" loading="lazy" />
-                <p>PostreSQL</p>
-            </li>
-        </ul>
-    
+
+        <p className="hero-tagline">Code. Build. Improve.</p>
+
+    </section>
     </>
 }
 export default Description;
