@@ -13,10 +13,10 @@ const projectsData = [
 
     {
       image: veyroPJ,
-      title: "Hospital Backend Management System",
+      title: "Shipment Tracking system",
       url: "https://github.com/jibareekumma/Hospital-Backend-management-system-Java-.git",
-      description: "Java · JDBC · SQLite — Full backend architecture with role-based access, patient/staff/clinical modules",
-      tags: ["Java", "SQLite", "JDBC"]
+      description: "Full Stack platform to create and track shipments in real time, with an admin dashboard for hubs, routes and statuses",
+      tags: ["Python", "SQLite", "React", "PostgreSQL", "Redis"]
   },
 
   {
