@@ -62,7 +62,7 @@ const quickLinks = [
     {
         title: "Resume / CV",
         sub: "Download my resume",
-        href: "/documents/jibare-resume-main.pdf",
+        href: "/documents/resume-main2.pdf",
         download: "jibare-resume"
     }
 ]
@@ -76,8 +76,8 @@ const stackLogos = [
 ]
 
 const statsData = [
-    { value: "5+", label: "Projects Completed" },
-    { value: "1+", label: "Happy Clients" },
+    { value: "10+", label: "Projects Completed" },
+    { value: "7+", label: "Happy Clients" },
     { value: "100%", label: "Focus & Consistency" },
     { value: "∞", label: "Growth Mindset" }
 ]

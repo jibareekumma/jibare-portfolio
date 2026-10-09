@@ -78,7 +78,7 @@ const Description = function(){
                     </svg>
                 </button>
                 <a className="btn btn-ghost"
-                    href="/documents/jibare-resume-main.pdf"
+                    href="/documents/resume-main2.pdf"
                     download="jibare-resume"
                 >
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

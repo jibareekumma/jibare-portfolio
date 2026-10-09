@@ -4,10 +4,20 @@ import mortagePJ from "/photos/mortage-pj.png"
 import veltrixPJ from "/photos/vetrixz-pj.png"
 import hospitalPJ from "/photos/hospital-pj.jpg"
 
+import veyroPJ from ".photos/veyro_pj.png"
+
 import "../css/Projects.css"
 import { useState } from "react"
 
 const projectsData = [
+
+    {
+      image: veyroPJ,
+      title: "Hospital Backend Management System",
+      url: "https://github.com/jibareekumma/Hospital-Backend-management-system-Java-.git",
+      description: "Java · JDBC · SQLite — Full backend architecture with role-based access, patient/staff/clinical modules",
+      tags: ["Java", "SQLite", "JDBC"]
+  },
 
   {
       image: veltrixPJ,
@@ -17,13 +27,7 @@ const projectsData = [
       tags: ["React", "PostgreSQL", "Django"]
   },
 
-  {
-      image: hospitalPJ,
-      title: "Hospital Backend Management System",
-      url: "https://github.com/jibareekumma/Hospital-Backend-management-system-Java-.git",
-      description: "Java · JDBC · SQLite — Full backend architecture with role-based access, patient/staff/clinical modules",
-      tags: ["Java", "SQLite", "JDBC"]
-  },
+  
     {
         image: aervynPJ,
         title: "Aervyn",
@@ -32,6 +36,14 @@ const projectsData = [
         tags: ["React", "Typescript", "TailwindCSS",
             "Django", "Supabase"]
     },
+
+    {
+      image: hospitalPJ,
+      title: "Hospital Backend Management System",
+      url: "https://github.com/jibareekumma/Hospital-Backend-management-system-Java-.git",
+      description: "Java · JDBC · SQLite — Full backend architecture with role-based access, patient/staff/clinical modules",
+      tags: ["Java", "SQLite", "JDBC"]
+  },
 
 
     {
