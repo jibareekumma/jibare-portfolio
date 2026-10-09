@@ -4,7 +4,7 @@ import mortagePJ from "/photos/mortage-pj.png"
 import veltrixPJ from "/photos/vetrixz-pj.png"
 import hospitalPJ from "/photos/hospital-pj.jpg"
 
-import veyroPJ from ".photos/veyro_pj.png"
+import veyroPJ from "/photos/veyro_pj.png"
 
 import "../css/Projects.css"
 import { useState } from "react"

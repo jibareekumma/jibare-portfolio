@@ -4,147 +4,304 @@
   height: auto;
   overflow: visible;
 
+  .ink {
+    stroke: #15162e;
+    stroke-width: 2.5;
+    stroke-linejoin: round;
+  }
+
+  .astro-glow {
+    transform-origin: 230px 215px;
+    animation: glow-breathe 5s ease-in-out infinite alternate;
+  }
+
+  .ring {
+    transform-origin: 230px 300px;
+    animation: ring-tilt 10s ease-in-out infinite alternate;
+  }
+
   .astro-float {
     transform-origin: 230px 220px;
-    animation: astro-float 6s ease-in-out infinite;
+    animation: astro-float 7s ease-in-out infinite;
   }
 
   .astro-body {
-    animation: astro-bounce 0.4s ease-in-out infinite alternate;
+    animation: astro-dip 0.6s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
   }
 
   .astro-torso {
     transform-origin: 230px 300px;
-    animation: astro-sway 0.8s ease-in-out infinite alternate;
+    animation: astro-sway 1.2s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
   }
 
   .astro-head {
     transform-origin: 230px 196px;
-    animation: astro-head 0.8s ease-in-out infinite alternate;
+    animation: astro-head 1.2s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
+    animation-delay: 0.14s;
   }
 
   .arm-l {
     transform-origin: 188px 214px;
-    animation: arm-l 0.8s ease-in-out infinite alternate;
+    animation: arm-l 1.2s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
   }
 
   .arm-r {
     transform-origin: 272px 214px;
-    animation: arm-r 0.8s ease-in-out infinite alternate;
+    animation: arm-r 0.6s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
   }
 
   .leg-l {
     transform-origin: 208px 292px;
-    animation: leg-l 0.8s ease-in-out infinite alternate;
+    animation: leg-l 1.2s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
   }
 
   .leg-r {
     transform-origin: 252px 292px;
-    animation: leg-r 0.8s ease-in-out infinite alternate;
+    animation: leg-r 1.2s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
   }
 
   .astro-shadow {
     transform-origin: 230px 410px;
-    animation: astro-shadow 0.8s ease-in-out infinite alternate;
+    animation: astro-shadow 0.6s ease-in-out infinite alternate;
+  }
+
+  .astro-pulse {
+    transform-origin: 230px 410px;
+    opacity: 0;
+    animation: astro-pulse 1.2s ease-out infinite;
+  }
+
+  .eq {
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+    animation: eq-bar 0.6s ease-in-out infinite alternate;
+    animation-delay: var(--d, 0s);
+  }
+
+  .led {
+    animation: led-blink 1.2s steps(1) infinite;
+  }
+
+  .visor-sweep {
+    animation: visor-sweep 6s ease-in-out infinite;
+  }
+
+  .visor-glint {
+    animation: visor-glint 3s ease-in-out infinite alternate;
+  }
+
+  .badge-disc {
+    filter: drop-shadow(0 0 4px #6366f1);
+  }
+
+  .badge-ring {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: badge-ping 2.4s ease-out infinite;
+  }
+
+  .badge-code {
+    animation: badge-glow 2.4s ease-in-out infinite alternate;
   }
 
   .spark {
     transform-box: fill-box;
     transform-origin: center;
-    animation: twinkle 3s ease-in-out infinite;
+    animation: twinkle 3.4s ease-in-out infinite;
     animation-delay: var(--d, 0s);
   }
 
-  .note {
-    fill: var(--accent-soft);
-    stroke: var(--accent-soft);
+  .glyph {
+    fill: var(--accent-soft, #a5a8ff);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 16px;
+    font-weight: 600;
     opacity: 0;
-    animation: note-rise 3.2s ease-out infinite;
+    animation: glyph-rise 4.2s ease-out infinite;
     animation-delay: var(--d, 0s);
+  }
+}
+
+@keyframes glow-breathe {
+  from {
+    transform: scale(0.96);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes ring-tilt {
+  from {
+    transform: rotate(-17deg);
+  }
+  to {
+    transform: rotate(-13deg);
   }
 }
 
 @keyframes astro-float {
   0%,
   100% {
-    transform: translateY(0) rotate(-1.5deg);
+    transform: translateY(0) rotate(-1deg);
   }
   50% {
-    transform: translateY(-14px) rotate(1.5deg);
+    transform: translateY(-12px) rotate(1.2deg);
   }
 }
 
-@keyframes astro-bounce {
+@keyframes astro-dip {
   from {
     transform: translateY(0);
   }
   to {
-    transform: translateY(-9px);
+    transform: translateY(7px);
   }
 }
 
 @keyframes astro-sway {
   from {
-    transform: rotate(-3.5deg);
+    transform: rotate(-4deg);
   }
   to {
-    transform: rotate(3.5deg);
+    transform: rotate(4deg);
   }
 }
 
 @keyframes astro-head {
   from {
-    transform: rotate(-7deg);
+    transform: rotate(-6deg) translateY(0);
   }
   to {
-    transform: rotate(7deg) translateY(-3px);
+    transform: rotate(4deg) translateY(-3px);
   }
 }
 
 @keyframes arm-l {
   from {
-    transform: rotate(142deg);
+    transform: rotate(52deg);
   }
   to {
-    transform: rotate(28deg);
+    transform: rotate(30deg);
   }
 }
 
 @keyframes arm-r {
   from {
-    transform: rotate(-28deg);
+    transform: rotate(-122deg);
   }
   to {
-    transform: rotate(-142deg);
+    transform: rotate(-144deg);
   }
 }
 
 @keyframes leg-l {
   from {
-    transform: rotate(9deg);
+    transform: rotate(7deg);
   }
   to {
-    transform: rotate(-5deg);
+    transform: rotate(-4deg);
   }
 }
 
 @keyframes leg-r {
   from {
-    transform: rotate(5deg);
+    transform: rotate(4deg);
   }
   to {
-    transform: rotate(-9deg);
+    transform: rotate(-7deg);
   }
 }
 
 @keyframes astro-shadow {
   from {
-    transform: scaleX(0.82);
+    transform: scaleX(0.85);
     opacity: 0.2;
   }
   to {
     transform: scaleX(1);
-    opacity: 0.32;
+    opacity: 0.34;
+  }
+}
+
+@keyframes astro-pulse {
+  from {
+    transform: scale(0.7);
+    opacity: 0.45;
+  }
+  to {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+
+@keyframes eq-bar {
+  from {
+    transform: scaleY(0.25);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes led-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes visor-sweep {
+  0%,
+  55% {
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  85% {
+    transform: translateX(150px);
+    opacity: 1;
+  }
+  90%,
+  100% {
+    transform: translateX(150px);
+    opacity: 0;
+  }
+}
+
+@keyframes visor-glint {
+  from {
+    opacity: 0.55;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes badge-ping {
+  from {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+
+@keyframes badge-glow {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -152,24 +309,30 @@
   0%,
   100% {
     opacity: 0.25;
-    transform: scale(0.6) rotate(0deg);
+    transform: scale(0.6);
   }
   50% {
     opacity: 1;
-    transform: scale(1.1) rotate(45deg);
+    transform: scale(1.05);
   }
 }
 
-@keyframes note-rise {
+@keyframes glyph-rise {
   0% {
     opacity: 0;
-    transform: translate(0, 0) rotate(-8deg);
+    transform: translate(0, 0);
   }
-  15% {
-    opacity: 0.95;
+  20% {
+    opacity: 0.9;
   }
   100% {
     opacity: 0;
-    transform: translate(var(--dx, 0px), -70px) rotate(12deg);
+    transform: translate(var(--dx, 0px), -60px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .astro * {
+    animation: none !important;
   }
 }
