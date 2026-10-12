@@ -166,7 +166,7 @@
       font-size: 1.4rem;
       font-weight: 500;
       box-shadow: 0 1rem 3rem -1rem var(--accent-glow);
-      transition: transform 0.25s var(--ease-out), box-shadow 0.3s ease;
+      transition: transform 0.25s var(--ease-out), box-shadow 0.3s ease, opacity 0.25s ease;
 
       svg {
         width: 1.6rem;
@@ -174,7 +174,7 @@
         transition: transform 0.3s var(--ease-out);
       }
 
-      &:hover {
+      &:hover:not(:disabled) {
         transform: translateY(-0.2rem);
         box-shadow: 0 1.4rem 3.6rem -0.8rem var(--accent-glow);
 
@@ -182,11 +182,24 @@
           transform: translate(0.3rem, -0.3rem);
         }
       }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
     }
 
     .submit-status {
       font-size: 1.25rem;
       color: var(--text-secondary);
+
+      &.success {
+        color: #22c55e;
+      }
+
+      &.error {
+        color: #ef4444;
+      }
     }
   }
 }

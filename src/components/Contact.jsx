@@ -1,7 +1,10 @@
+
+
 import whatsappIcon from "/icons/whatsapp-icon.png"
 
 import "../css/Contact.css"
-import { useState } from "react"
+import { useState, useRef } from "react"
+import emailjs from "@emailjs/browser"
 
 const testimonialsData = [
     {
@@ -15,6 +18,9 @@ const Contact = function(){
     const [activeTestimonial, setActiveTestimonial] = useState(0)
     const [formData, setFormData] = useState({ name: "", email: "", message: "" })
     const [submitStatus, setSubmitStatus] = useState("")
+    const [statusType, setStatusType] = useState("")
+    const [isSending, setIsSending] = useState(false)
+    const botRef = useRef(null)
 
     const handleChange = function(field){
         return function(e){
@@ -24,31 +30,52 @@ const Contact = function(){
         }
     }
 
-    const encode = function(data){
-        return Object.keys(data)
-            .map(function(key){
-                return encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-            })
-            .join("&")
-    }
-
     const handleSubmit = function(){
-        if(!formData.name || !formData.email || !formData.message){
+        if(isSending){
+            return
+        }
+
+        if(botRef.current && botRef.current.value){
+            return
+        }
+
+        if(!formData.name.trim() || !formData.email.trim() || !formData.message.trim()){
+            setStatusType("error")
             setSubmitStatus("Please fill in all fields.")
             return
         }
 
-        fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ "form-name": "contact", ...formData })
-        })
+        if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())){
+            setStatusType("error")
+            setSubmitStatus("Please enter a valid email address.")
+            return
+        }
+
+        setIsSending(true)
+        setStatusType("")
+        setSubmitStatus("")
+
+        emailjs.send(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            {
+                from_name: formData.name.trim(),
+                reply_to: formData.email.trim(),
+                message: formData.message.trim()
+            },
+            { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
+        )
         .then(function(){
+            setStatusType("success")
             setSubmitStatus("Message sent — thank you!")
             setFormData({ name: "", email: "", message: "" })
         })
         .catch(function(){
+            setStatusType("error")
             setSubmitStatus("Something went wrong, please try again.")
+        })
+        .finally(function(){
+            setIsSending(false)
         })
     }
 
@@ -139,17 +166,22 @@ const Contact = function(){
                     ></textarea>
 
                     <input type="text" name="bot-field"
+                    ref={botRef}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
                     style={{ display: "none" }} />
 
                     <button className="send-message-btn"
                         onClick={handleSubmit}
+                        disabled={isSending}
                     >
-                        Send Message
+                        {isSending ? "Sending..." : "Send Message"}
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/>
                         </svg>
                     </button>
-                    {submitStatus && <p className="submit-status">
+                    {submitStatus && <p className={`submit-status ${statusType}`}>
                         {submitStatus}</p>}
                 </div>
 
