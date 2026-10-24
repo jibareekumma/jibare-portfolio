@@ -110,7 +110,7 @@ const Contact = function(){
                                 <a
                                  target="_blank"
                                 href="mailto: jibareekumma@gmail.com">
-                                    jibareekumma@gmail.com</a></span>
+                                    devjibare@gmail.com</a></span>
                         </div>
                         <div className="contact-row">
                             <img src={whatsappIcon}

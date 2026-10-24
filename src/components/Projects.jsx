@@ -14,7 +14,7 @@ const projectsData = [
     {
       image: veyroPJ,
       title: "Shipment Tracking system",
-      url: "https://github.com/jibareekumma/Hospital-Backend-management-system-Java-.git",
+      url: "https://veyro-logistics.netlify.app/",
       description: "Full Stack platform to create and track shipments in real time, with an admin dashboard for hubs, routes and statuses",
       tags: ["Python", "SQLite", "React", "PostgreSQL", "Redis"]
   },
