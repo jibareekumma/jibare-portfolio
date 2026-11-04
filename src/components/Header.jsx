@@ -136,8 +136,8 @@ const Header = function(){
                     <svg className="orbit-ring" viewBox="0 0 100 100">
                         <defs>
                             <linearGradient id="orbitGradient" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0%" stopColor="#5d60f2"/>
-                                <stop offset="100%" stopColor="#b4b7ff"/>
+                                <stop offset="0%" stopColor="#68738C"/>
+                                <stop offset="100%" stopColor="#A8AEC2"/>
                             </linearGradient>
                         </defs>
                         <circle className="orbit-track" cx="50" cy="50" r="46"/>

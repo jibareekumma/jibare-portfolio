@@ -5,7 +5,7 @@
   overflow: visible;
 
   .ink {
-    stroke: #15162e;
+    stroke: #343B4A;
     stroke-width: 2.5;
     stroke-linejoin: round;
   }
@@ -91,7 +91,7 @@
   }
 
   .badge-disc {
-    filter: drop-shadow(0 0 4px #6366f1);
+    filter: drop-shadow(0 0 4px #68738C);
   }
 
   .badge-ring {
@@ -112,7 +112,7 @@
   }
 
   .glyph {
-    fill: var(--accent-soft, #a5a8ff);
+    fill: var(--accent-soft, #A8AEC2);
     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     font-size: 16px;
     font-weight: 600;

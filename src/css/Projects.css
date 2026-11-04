@@ -87,9 +87,9 @@
   padding: 0 1.1rem;
   border-radius: 999px;
   border: 1px solid var(--accent-border);
-  background: rgba(10, 11, 20, 0.72);
+  background: rgba(21, 24, 33, 0.82);
   backdrop-filter: blur(8px);
-  color: #aeb1ff;
+  color: #A8AEC2;
   font-size: 1.15rem;
   font-weight: 500;
 }

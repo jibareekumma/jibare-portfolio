@@ -171,10 +171,10 @@
   color: var(--text-secondary);
 }
 .contact-section .contact-form .submit-status.success {
-  color: #22c55e;
+  color: #A8AEC2;
 }
 .contact-section .contact-form .submit-status.error {
-  color: #ef4444;
+  color: #68738C;
 }
 
 @media (min-width: 860px) {

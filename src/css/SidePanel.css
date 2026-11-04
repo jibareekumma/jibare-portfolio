@@ -29,7 +29,7 @@
   height: 6rem;
   padding: 0.3rem;
   border-radius: 50%;
-  background: conic-gradient(from 200deg, var(--accent), #b4b7ff, var(--accent));
+  background: conic-gradient(from 200deg, var(--accent), #A8AEC2, var(--accent));
 }
 .side-panel .profile-card .avatar img {
   width: 100%;

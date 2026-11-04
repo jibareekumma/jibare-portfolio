@@ -5,7 +5,7 @@
   overflow: visible;
 }
 .astro .ink {
-  stroke: #15162e;
+  stroke: #343B4A;
   stroke-width: 2.5;
   stroke-linejoin: round;
 }
@@ -74,7 +74,7 @@
   animation: visor-glint 3s ease-in-out infinite alternate;
 }
 .astro .badge-disc {
-  filter: drop-shadow(0 0 4px #6366f1);
+  filter: drop-shadow(0 0 4px #68738C);
 }
 .astro .badge-ring {
   transform-box: fill-box;
@@ -91,7 +91,7 @@
   animation-delay: var(--d, 0s);
 }
 .astro .glyph {
-  fill: var(--accent-soft, #a5a8ff);
+  fill: var(--accent-soft, #A8AEC2);
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 16px;
   font-weight: 600;
