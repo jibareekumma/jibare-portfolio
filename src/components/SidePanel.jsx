@@ -5,6 +5,7 @@ import typescriptLogo from "/icons/typscript_logo.png"
 import taiwindLogo from "/icons/taiwind-logo.png"
 import djangoLogo from "/icons/django_logo.png"
 import postresqlLogo from "/icons/postresql-logo.png"
+import dockerLogo from "/icons/docker.png"
 import avatar from "/photos/jibare-image.png"
 
 import "../css/SidePanel.css"
@@ -29,8 +30,8 @@ const profileRows = [
     },
     {
         label: "Email",
-        value: "devjibare@gmail.com",
-        href: "mailto:devjibare@gmail.com",
+        value: "devjibare@devjibare.cv",
+        href: "mailto:devjibare@devjibare.cv",
         icon: <>
             <rect x="3" y="5" width="18" height="14" rx="2.5"/>
             <path d="m3.5 7 8.5 6 8.5-6"/>
@@ -72,7 +73,9 @@ const stackLogos = [
     { name: "Typescript", logo: typescriptLogo },
     { name: "Tailwind", logo: taiwindLogo },
     { name: "Django", logo: djangoLogo },
-    { name: "PostgreSQL", logo: postresqlLogo }
+    { name: "PostgreSQL", logo: postresqlLogo },
+    { name: "Docker", logo: dockerLogo }
+
 ]
 
 const statsData = [
@@ -100,7 +103,7 @@ const SidePanel = function(){
                     </div>
                     <div className="profile-name">
                         <h4>Jibare</h4>
-                        <p>Full Stack Developer</p>
+                        <p>Full Stack & DevOps Engineer</p>
                     </div>
                 </div>
                 <ul className="profile-rows">

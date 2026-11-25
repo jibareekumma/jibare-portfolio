@@ -55,7 +55,7 @@ const MoreAboutMe = function(){
                 <h1 className="page-title">More About Me</h1>
 
                 <p className="intro-text">
-                    I'm a passionate Full Stack Developer and SEO Analyst
+                    I'm a passionate Full Stack and DevOps Engineer
                     who loves building fast, scalable, and user-focused
                     digital solutions. I enjoy turning ideas into real products
                     that solve problems and create impact.
@@ -143,9 +143,11 @@ const MoreAboutMe = function(){
                                 <span className="tag">Python</span>
                                 <span className="tag">Django</span>
                                 <span className="tag">PostgreSQL</span>
+                                <span className="tag">Docker</span>
                                 <span className="tag">TailwindCSS</span>
                                 <span className="tag">Git</span>
                                 <span className="tag">GitHub</span>
+                               
                             </div>
                         </div>
                     </div>
@@ -329,12 +331,9 @@ const MoreAboutMe = function(){
                             <span className="info-label">Email</span>
                             <span className="info-value"> <a className="info-link"
                             title="mail devjibare"
-                            href="mailto:jibareekumma@gmail.com">
-                                jibareekumma@gmail.com</a>
-                                {/* || <a className="info-link"
-                                title="mail devjibare"
-                            href="mailto:solomonekumma@gmail.com">
-                                solomonekumma@gmail.com</a> */}
+                            href="mailto:devjibare@devjibare.cv">
+                                devjibare@devjibare.cv</a>
+                                
                             </span>
                         </div>
                     </div>
@@ -346,11 +345,11 @@ const MoreAboutMe = function(){
                         <div className="info-text">
                             <span className="info-label">Phone</span>
                             <span className="info-value">
-                                <a href="tel:+234 913 033 0586"
+                                <a href="tel:+234 810 359 0715"
                                     className="info-link"
                                     title="call devjibare"
                                 >
-                                    +234 913 033 0586
+                                    +234 810 359 0715
                                 </a>
                                 </span>
                         </div>

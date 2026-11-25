@@ -109,8 +109,8 @@ const Contact = function(){
                             <span>
                                 <a
                                  target="_blank"
-                                href="mailto: jibareekumma@gmail.com">
-                                    devjibare@gmail.com</a></span>
+                                href="mailto: devjibare@devjibare.cv">
+                                    devjibare@devjibare.cv</a></span>
                         </div>
                         <div className="contact-row">
                             <img src={whatsappIcon}
@@ -119,8 +119,8 @@ const Contact = function(){
                             <span>
                                  <a
                                   target="_blank"
-                                 href="tel: +234 913 033 0586">
-                                    +234 913 033 0586</a>
+                                 href="tel: +234 810 359 0715">
+                                    +234 810 359 0715</a>
                             </span>
                         </div>
                     </div>

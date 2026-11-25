@@ -3,6 +3,7 @@ import typescriptLogo from "/icons/typscript_logo.png"
 import taiwindLogo from "/icons/taiwind-logo.png"
 import djangoLogo from "/icons/django_logo.png"
 import postresqlLogo from "/icons/postresql-logo.png"
+import dockerLogo from "/icons/docker.png"
 
 import Astronaut from "./Astronaut"
 import "../css/Description.css"
@@ -14,7 +15,8 @@ const heroSkills = [
     { name: "Typescript", logo: typescriptLogo },
     { name: "Tailwind", logo: taiwindLogo },
     { name: "Django", logo: djangoLogo },
-    { name: "PostgreSQL", logo: postresqlLogo }
+    { name: "PostgreSQL", logo: postresqlLogo },
+    { name: "Docker", logo: dockerLogo }
 ]
 
 const Description = function(){
@@ -59,7 +61,7 @@ const Description = function(){
             </h1>
 
             <p className="hero-roles">
-                Full Stack Developer <i>/</i> SEO Analyst
+                Full Stack & DevOps Eng <i>/</i> SEO Analyst
             </p>
 
             <p className="hero-text">
