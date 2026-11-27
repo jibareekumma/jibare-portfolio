@@ -4,6 +4,7 @@ import Projects from "./Projects";
 import AboutMe from "./AboutMe";
 import Services from "./Services";
 import Contact from "./Contact";
+import Reviews from "./Reviews";
 import SidePanel from "./SidePanel";
 import Footer from "./Footer";
 
@@ -23,6 +24,7 @@ const Intro = function(){
             <Projects/>
             <AboutMe/>
             <Services/>
+            <Reviews/>
             <Contact/>
             <Footer/>
         </main>
